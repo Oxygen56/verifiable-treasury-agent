@@ -1,0 +1,68 @@
+{
+  "generatedAt": "2026-08-09T17:22:58.505Z",
+  "network": "hardhat-local",
+  "token": "Mock Test Dollar (no value)",
+  "scenario": "15,000 token cross-border settlement requiring two approvals",
+  "transactions": [
+    {
+      "label": "record clearance",
+      "txHash": "0xae68b8496b7737b584a15060adde926ed5aee19d82ef7dd366bd8b9a3827b3c9",
+      "gasUsed": "71860",
+      "latencyMs": 12.17,
+      "status": 1
+    },
+    {
+      "label": "propose high-value settlement",
+      "txHash": "0x108f048fab8c085434979a5c5de425b8192be238409f537975c1a0c8900cddf9",
+      "gasUsed": "197241",
+      "latencyMs": 86.69,
+      "status": 1
+    },
+    {
+      "label": "approval 1/2",
+      "txHash": "0x48d55f2dae2b82e3b9a4246dbece5ac8b9e7e9cdec6db9dd8f7f6be573e945f8",
+      "gasUsed": "69656",
+      "latencyMs": 48.98,
+      "status": 1
+    },
+    {
+      "label": "approval 2/2",
+      "txHash": "0x5709fc95e83bf5c3d42e00c4f4ec9704063e86950405799d0a279d8a3c84d8ed",
+      "gasUsed": "69886",
+      "latencyMs": 45.13,
+      "status": 1
+    },
+    {
+      "label": "fund escrow",
+      "txHash": "0x83d231adfa32ed830f070acbc9aac52d5afe608f73da9876311ae15e5ced27e2",
+      "gasUsed": "106355",
+      "latencyMs": 137.36,
+      "status": 1
+    },
+    {
+      "label": "release after challenge window",
+      "txHash": "0x3b45309d0fff22d75a0649656b3b2320646cc88e372ea83a35aef246bb4df317",
+      "gasUsed": "74954",
+      "latencyMs": 57.32,
+      "status": 1
+    }
+  ],
+  "totals": {
+    "transactionCount": 6,
+    "gasUsed": "589952",
+    "observedWallClockLatencyMs": 387.65
+  },
+  "reconciliation": {
+    "payerAfterFunding": "35000000000",
+    "escrowAfterFunding": "15000000000",
+    "beneficiaryFinal": "15000000000",
+    "escrowFinal": "0",
+    "invariant": "escrowFinal == 0 and beneficiaryFinal == 15000000000",
+    "passed": true
+  },
+  "limitations": [
+    "Local latency excludes public RPC, mempool, sequencer, and wallet confirmation time.",
+    "Gas units are reproducible, but fiat cost requires a live gas price and exchange rate.",
+    "Compliance digest demonstrates policy binding; it is not a certified sanctions-screening service."
+  ]
+}

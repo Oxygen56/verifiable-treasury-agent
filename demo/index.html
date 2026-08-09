@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Verifiable Treasury Agent — contract-enforced cross-border stablecoin settlement controls." />
+  <title>Verifiable Treasury Agent</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <nav><a class="brand" href="#top">VTA<span>→</span></a><div><a href="#controls">Controls</a><a href="#evidence">Evidence</a><a id="repo-link" href="#">Source</a></div></nav>
+  <main id="top">
+    <section class="hero">
+      <p class="eyebrow">NTU CCTF × SNZ INNOVATEX · TRACK 1</p>
+      <h1>Move stablecoins.<br><em>Prove every control.</em></h1>
+      <p class="lead">An AI can explain and orchestrate. Only an auditable contract can approve, escrow, cancel, roll back, or release a cross-border treasury settlement.</p>
+      <div class="hero-actions"><button id="run-demo">Run control-room demo</button><a href="#evidence">Inspect evidence ↓</a></div>
+      <div class="boundary"><strong>Trust boundary</strong><span>AI has no privileged key and no bypass path.</span></div>
+    </section>
+
+    <section id="controls" class="control-room">
+      <div class="section-head"><p>LIVE SIMULATION</p><h2>A successful payment is only half the demo.</h2></div>
+      <div class="grid">
+        <div class="panel flow-panel">
+          <div class="panel-title"><span>SETTLEMENT #0042</span><span id="state-pill" class="pill">READY</span></div>
+          <div class="amount"><span>15,000.00</span><small>test USDC · SG → CN</small></div>
+          <ol id="timeline">
+            <li data-step="0"><b>Policy attested</b><span>Digest + expiry, no raw KYC</span></li>
+            <li data-step="1"><b>Two approvals</b><span>Distinct finance signers required</span></li>
+            <li data-step="2"><b>Escrow funded</b><span>Daily limit checked atomically</span></li>
+            <li data-step="3"><b>Challenge window</b><span>Cancellation still refunds payer</span></li>
+            <li data-step="4"><b>Released + reconciled</b><span>Escrow 0 · beneficiary 15,000</span></li>
+          </ol>
+        </div>
+        <div class="panel test-panel">
+          <div class="panel-title"><span>NEGATIVE CONTROLS</span><span class="live-dot">7 TESTS</span></div>
+          <button class="scenario" data-result="blocked"><span>Sanction status changes</span><b>BLOCK RELEASE</b></button>
+          <button class="scenario" data-result="blocked"><span>Daily limit exceeded</span><b>ROLL BACK</b></button>
+          <button class="scenario" data-result="refunded"><span>Bank details disputed</span><b>REFUND ESCROW</b></button>
+          <button class="scenario" data-result="refunded"><span>Settlement expires</span><b>REFUND ESCROW</b></button>
+          <div id="scenario-output">Select a failure path. The UI does not decide the outcome; the contract does.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="principles">
+      <article><span>01</span><h3>Policy-bound</h3><p>Every proposal pins an exact compliance digest and expiry. A changed or stale policy halts release.</p></article>
+      <article><span>02</span><h3>Private by minimization</h3><p>Salted commitments go on-chain; invoice, identity, and screening records stay off-chain.</p></article>
+      <article><span>03</span><h3>Precisely revocable</h3><p>Funds can be refunded before release. We never pretend a finalized transfer can be magically reversed.</p></article>
+    </section>
+
+    <section id="evidence" class="evidence">
+      <div class="section-head"><p>EVIDENCE, NOT PROMISES</p><h2>Every claim maps to an inspectable artifact.</h2></div>
+      <div class="evidence-grid">
+        <a href="../contracts/VerifiableTreasury.sol"><b>Core contract</b><span>State machine and roles</span></a>
+        <a href="../test/VerifiableTreasury.test.js"><b>Negative controls</b><span>Atomic rollback assertions</span></a>
+        <a href="../evidence/benchmark.json"><b>Measured run</b><span>Gas, latency, balances</span></a>
+        <a id="explorer-link" href="#"><b>Base Sepolia</b><span id="testnet-status">Pending funded test wallet</span></a>
+      </div>
+      <div class="metrics">
+        <div><strong id="tx-count">—</strong><span>state-changing transactions</span></div>
+        <div><strong id="gas-total">—</strong><span>gas units in measured path</span></div>
+        <div><strong id="reconciled">—</strong><span>escrow reconciliation</span></div>
+      </div>
+      <p class="fineprint">Local latency is not public-chain latency. The sanctions digest is a demo attestation, not a certified screening service. Test assets have no financial value.</p>
+    </section>
+  </main>
+  <footer><span>VERIFIABLE TREASURY AGENT · 2026</span><span>AI explains. Contracts enforce. Humans remain accountable.</span></footer>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+Nothing to compile
+
+
+  VerifiableTreasury
+    ✔ executes a low-value settlement and verifies selective disclosure (12584ms)
+    ✔ requires two distinct approvals above the high-value threshold (1411ms)
+    ✔ blocks sanctioned beneficiaries without mutating settlement state (502ms)
+    ✔ cancels a funded settlement and refunds the payer before release (1303ms)
+    ✔ rolls an expired funded settlement back and reconciles balances (780ms)
+    ✔ reverts atomically when the daily limit would be exceeded (461ms)
+    ✔ invalidates release when compliance changes the attested policy digest (450ms)
+
+
+  7 passing (18s)
+

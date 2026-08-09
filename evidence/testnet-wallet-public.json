@@ -1,0 +1,8 @@
+{
+  "generatedAt": "2026-08-09T17:35:44.288Z",
+  "purpose": "Base Sepolia hackathon deployment only",
+  "address": "0x7c2164e3D612726Ed1C0451b2e04B62F85dB9f56",
+  "network": "Base Sepolia",
+  "chainId": 84532,
+  "warning": "Test-only wallet. Never send mainnet assets. Private key is stored only in gitignored .env."
+}

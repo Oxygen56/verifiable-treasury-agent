@@ -1,0 +1,105 @@
+Downloading compiler 0.8.28
+Compiled 17 Solidity files successfully (evm target: paris).
+
+
+  VerifiableTreasury
+    1) executes a low-value settlement and verifies selective disclosure
+    2) requires two distinct approvals above the high-value threshold
+    3) blocks sanctioned beneficiaries without mutating settlement state
+    4) cancels a funded settlement and refunds the payer before release
+    5) rolls an expired funded settlement back and reconciles balances
+    6) reverts atomically when the daily limit would be exceeded
+    7) invalidates release when compliance changes the attested policy digest
+
+
+  0 passing (10s)
+  7 failing
+
+  1) VerifiableTreasury
+       executes a low-value settlement and verifies selective disclosure:
+     Error: VM Exception while processing transaction: reverted with custom error 'InvalidSchedule()'
+    at VerifiableTreasury.proposeSettlement (contracts/VerifiableTreasury.sol:110)
+    at EdrProviderWrapper.request (node_modules/.pnpm/hardhat@2.22.19_supports-color@8.1.1_ts-node@10.9.2_@types+node@26.2.0_typescript@7.0.2__typescript@7.0.2/node_modules/hardhat/src/internal/hardhat-network/provider/provider.ts:397:41)
+    at HardhatEthersSigner.sendTransaction (node_modules/.pnpm/@nomicfoundation+hardhat-ethers@3.1.3_ethers@6.17.0_hardhat@2.22.19_supports-color@8.1._98320af1decf843dff9ca30059cd1085/node_modules/@nomicfoundation/hardhat-ethers/src/signers.ts:185:18)
+    at send (node_modules/.pnpm/ethers@6.17.0/node_modules/ethers/src.ts/contract/contract.ts:313:20)
+    at Proxy.proposeSettlement (node_modules/.pnpm/ethers@6.17.0/node_modules/ethers/src.ts/contract/contract.ts:352:16)
+    at prepare (test/VerifiableTreasury.test.js:32:5)
+    at Context.<anonymous> (test/VerifiableTreasury.test.js:38:15)
+  
+
+  2) VerifiableTreasury
+       requires two distinct approvals above the high-value threshold:
+     Error: VM Exception while processing transaction: reverted with custom error 'InvalidSchedule()'
+    at VerifiableTreasury.proposeSettlement (contracts/VerifiableTreasury.sol:110)
+    at EdrProviderWrapper.request (node_modules/.pnpm/hardhat@2.22.19_supports-color@8.1.1_ts-node@10.9.2_@types+node@26.2.0_typescript@7.0.2__typescript@7.0.2/node_modules/hardhat/src/internal/hardhat-network/provider/provider.ts:397:41)
+    at HardhatEthersSigner.sendTransaction (node_modules/.pnpm/@nomicfoundation+hardhat-ethers@3.1.3_ethers@6.17.0_hardhat@2.22.19_supports-color@8.1._98320af1decf843dff9ca30059cd1085/node_modules/@nomicfoundation/hardhat-ethers/src/signers.ts:185:18)
+    at send (node_modules/.pnpm/ethers@6.17.0/node_modules/ethers/src.ts/contract/contract.ts:313:20)
+    at Proxy.proposeSettlement (node_modules/.pnpm/ethers@6.17.0/node_modules/ethers/src.ts/contract/contract.ts:352:16)
+    at prepare (test/VerifiableTreasury.test.js:32:5)
+    at Context.<anonymous> (test/VerifiableTreasury.test.js:52:5)
+  
+
+  3) VerifiableTreasury
+       blocks sanctioned beneficiaries without mutating settlement state:
+     Error: VM Exception while processing transaction: reverted with custom error 'InvalidSchedule()'
+    at VerifiableTreasury.proposeSettlement (contracts/VerifiableTreasury.sol:110)
+    at EdrProviderWrapper.request (node_modules/.pnpm/hardhat@2.22.19_supports-color@8.1.1_ts-node@10.9.2_@types+node@26.2.0_typescript@7.0.2__typescript@7.0.2/node_modules/hardhat/src/internal/hardhat-network/provider/provider.ts:397:41)
+    at HardhatEthersSigner.sendTransaction (node_modules/.pnpm/@nomicfoundation+hardhat-ethers@3.1.3_ethers@6.17.0_hardhat@2.22.19_supports-color@8.1._98320af1decf843dff9ca30059cd1085/node_modules/@nomicfoundation/hardhat-ethers/src/signers.ts:185:18)
+    at send (node_modules/.pnpm/ethers@6.17.0/node_modules/ethers/src.ts/contract/contract.ts:313:20)
+    at Proxy.proposeSettlement (node_modules/.pnpm/ethers@6.17.0/node_modules/ethers/src.ts/contract/contract.ts:352:16)
+    at prepare (test/VerifiableTreasury.test.js:32:5)
+    at Context.<anonymous> (test/VerifiableTreasury.test.js:62:15)
+  
+
+  4) VerifiableTreasury
+       cancels a funded settlement and refunds the payer before release:
+     Error: VM Exception while processing transaction: reverted with custom error 'InvalidSchedule()'
+    at VerifiableTreasury.proposeSettlement (contracts/VerifiableTreasury.sol:110)
+    at EdrProviderWrapper.request (node_modules/.pnpm/hardhat@2.22.19_supports-color@8.1.1_ts-node@10.9.2_@types+node@26.2.0_typescript@7.0.2__typescript@7.0.2/node_modules/hardhat/src/internal/hardhat-network/provider/provider.ts:397:41)
+    at HardhatEthersSigner.sendTransaction (node_modules/.pnpm/@nomicfoundation+hardhat-ethers@3.1.3_ethers@6.17.0_hardhat@2.22.19_supports-color@8.1._98320af1decf843dff9ca30059cd1085/node_modules/@nomicfoundation/hardhat-ethers/src/signers.ts:185:18)
+    at send (node_modules/.pnpm/ethers@6.17.0/node_modules/ethers/src.ts/contract/contract.ts:313:20)
+    at Proxy.proposeSettlement (node_modules/.pnpm/ethers@6.17.0/node_modules/ethers/src.ts/contract/contract.ts:352:16)
+    at prepare (test/VerifiableTreasury.test.js:32:5)
+    at Context.<anonymous> (test/VerifiableTreasury.test.js:72:5)
+  
+
+  5) VerifiableTreasury
+       rolls an expired funded settlement back and reconciles balances:
+     Error: VM Exception while processing transaction: reverted with custom error 'InvalidSchedule()'
+    at VerifiableTreasury.proposeSettlement (contracts/VerifiableTreasury.sol:110)
+    at EdrProviderWrapper.request (node_modules/.pnpm/hardhat@2.22.19_supports-color@8.1.1_ts-node@10.9.2_@types+node@26.2.0_typescript@7.0.2__typescript@7.0.2/node_modules/hardhat/src/internal/hardhat-network/provider/provider.ts:397:41)
+    at HardhatEthersSigner.sendTransaction (node_modules/.pnpm/@nomicfoundation+hardhat-ethers@3.1.3_ethers@6.17.0_hardhat@2.22.19_supports-color@8.1._98320af1decf843dff9ca30059cd1085/node_modules/@nomicfoundation/hardhat-ethers/src/signers.ts:185:18)
+    at send (node_modules/.pnpm/ethers@6.17.0/node_modules/ethers/src.ts/contract/contract.ts:313:20)
+    at Proxy.proposeSettlement (node_modules/.pnpm/ethers@6.17.0/node_modules/ethers/src.ts/contract/contract.ts:352:16)
+    at prepare (test/VerifiableTreasury.test.js:32:5)
+    at Context.<anonymous> (test/VerifiableTreasury.test.js:84:15)
+  
+
+  6) VerifiableTreasury
+       reverts atomically when the daily limit would be exceeded:
+     Error: VM Exception while processing transaction: reverted with custom error 'InvalidSchedule()'
+    at VerifiableTreasury.proposeSettlement (contracts/VerifiableTreasury.sol:110)
+    at EdrProviderWrapper.request (node_modules/.pnpm/hardhat@2.22.19_supports-color@8.1.1_ts-node@10.9.2_@types+node@26.2.0_typescript@7.0.2__typescript@7.0.2/node_modules/hardhat/src/internal/hardhat-network/provider/provider.ts:397:41)
+    at HardhatEthersSigner.sendTransaction (node_modules/.pnpm/@nomicfoundation+hardhat-ethers@3.1.3_ethers@6.17.0_hardhat@2.22.19_supports-color@8.1._98320af1decf843dff9ca30059cd1085/node_modules/@nomicfoundation/hardhat-ethers/src/signers.ts:185:18)
+    at send (node_modules/.pnpm/ethers@6.17.0/node_modules/ethers/src.ts/contract/contract.ts:313:20)
+    at Proxy.proposeSettlement (node_modules/.pnpm/ethers@6.17.0/node_modules/ethers/src.ts/contract/contract.ts:352:16)
+    at prepare (test/VerifiableTreasury.test.js:32:5)
+    at Context.<anonymous> (test/VerifiableTreasury.test.js:95:5)
+  
+
+  7) VerifiableTreasury
+       invalidates release when compliance changes the attested policy digest:
+     Error: VM Exception while processing transaction: reverted with custom error 'InvalidSchedule()'
+    at VerifiableTreasury.proposeSettlement (contracts/VerifiableTreasury.sol:110)
+    at EdrProviderWrapper.request (node_modules/.pnpm/hardhat@2.22.19_supports-color@8.1.1_ts-node@10.9.2_@types+node@26.2.0_typescript@7.0.2__typescript@7.0.2/node_modules/hardhat/src/internal/hardhat-network/provider/provider.ts:397:41)
+    at HardhatEthersSigner.sendTransaction (node_modules/.pnpm/@nomicfoundation+hardhat-ethers@3.1.3_ethers@6.17.0_hardhat@2.22.19_supports-color@8.1._98320af1decf843dff9ca30059cd1085/node_modules/@nomicfoundation/hardhat-ethers/src/signers.ts:185:18)
+    at send (node_modules/.pnpm/ethers@6.17.0/node_modules/ethers/src.ts/contract/contract.ts:313:20)
+    at Proxy.proposeSettlement (node_modules/.pnpm/ethers@6.17.0/node_modules/ethers/src.ts/contract/contract.ts:352:16)
+    at prepare (test/VerifiableTreasury.test.js:32:5)
+    at Context.<anonymous> (test/VerifiableTreasury.test.js:107:15)
+  
+
+
+
+[ELIFECYCLE] Test failed. See above for more details.
+[ELIFECYCLE] Command failed with exit code 7.

@@ -1,0 +1,1 @@
+$ hardhat run scripts/benchmark.js

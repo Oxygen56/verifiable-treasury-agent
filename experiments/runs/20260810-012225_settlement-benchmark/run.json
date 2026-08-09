@@ -1,0 +1,21 @@
+{
+  "run_id": "20260810-012225_settlement-benchmark",
+  "name": "settlement-benchmark",
+  "command": [
+    "pnpm",
+    "benchmark"
+  ],
+  "returncode": 0,
+  "duration_sec": 33.072,
+  "metric": "judge_score",
+  "score": null,
+  "direction": "maximize",
+  "tags": "gas,latency,reconciliation",
+  "notes": "Measure the complete two-approval settlement path",
+  "created_at": "2026-08-10T01:22:58",
+  "git": {
+    "commit": "",
+    "branch": "",
+    "status": ""
+  }
+}
