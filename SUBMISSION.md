@@ -47,11 +47,11 @@ Solidity, OpenZeppelin Contracts, Hardhat, ethers.js, Base Sepolia, Circle test 
 
 ## Evidence checklist
 
-- [ ] Public repository URL
-- [ ] Public demo URL
+- [x] Public repository URL: https://github.com/Oxygen56/verifiable-treasury-agent
+- [x] Public demo URL configured: https://oxygen56.github.io/verifiable-treasury-agent/
 - [ ] Base Sepolia contract and deployment transaction
 - [ ] At least one full test-USDC settlement transaction sequence
-- [ ] Test suite result and benchmark artifact
-- [ ] 3-minute demo video or supporting PDF/file
-- [ ] Prior-work, AI, dependency, and test-token disclosure
+- [x] Test suite result and benchmark artifact
+- [x] Supporting PDF: `output/pdf/verifiable-treasury-agent-evidence.pdf`
+- [x] Prior-work, AI, dependency, and test-token disclosure
 - [ ] Submission form reviewed for AI disclosure or personal legal declarations before final submit

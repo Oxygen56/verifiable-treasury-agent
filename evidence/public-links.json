@@ -1,0 +1,7 @@
+{
+  "repository": "https://github.com/Oxygen56/verifiable-treasury-agent",
+  "demo": "https://oxygen56.github.io/verifiable-treasury-agent/",
+  "ci": "https://github.com/Oxygen56/verifiable-treasury-agent/actions/workflows/verify.yml",
+  "baseSepolia": null,
+  "updatedAt": "2026-08-10T02:02:00+08:00"
+}

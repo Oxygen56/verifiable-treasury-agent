@@ -2,6 +2,9 @@
 
 Track 1 prototype for NTU CCTF × SNZ InnovateX 2026: a cross-border treasury and stablecoin settlement agent whose core state transitions are enforced by an auditable smart contract rather than an AI model.
 
+**Live demo:** https://oxygen56.github.io/verifiable-treasury-agent/  
+**Evidence deck:** `output/pdf/verifiable-treasury-agent-evidence.pdf`
+
 ## Why it can win
 
 - **Verifiable controls:** daily limits, multi-party approval, compliance attestations, challenge windows, and atomic rollback are enforced on-chain.
