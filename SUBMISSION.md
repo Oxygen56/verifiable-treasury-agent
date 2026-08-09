@@ -10,7 +10,7 @@ An AI-orchestrated, contract-enforced cross-border treasury rail that makes stab
 
 ## Track
 
-Track 1 — A Beginner’s Guide to Stablecoin and AI Agent
+Track 1 — Payments and Financial Infrastructure
 
 ## Problem
 
