@@ -37,6 +37,14 @@ cp .env.example .env
 pnpm deploy:base-sepolia
 ```
 
+For a fully self-contained end-to-end public-testnet run, deploy the explicitly labeled `Mock Test Dollar`, execute a two-approver 15,000-token settlement, and write all receipts and reconciliation evidence:
+
+```bash
+pnpm demo:base-sepolia
+```
+
+This second route proves real Base Sepolia transaction execution without depending on a test-USDC faucet. It does not claim that the demo token is USDC, backed, or valuable.
+
 ## Repository map
 
 - `contracts/VerifiableTreasury.sol` — deterministic settlement state machine

@@ -9,6 +9,7 @@
     "test": "hardhat test",
     "benchmark": "hardhat run scripts/benchmark.js",
     "deploy:base-sepolia": "hardhat run scripts/deploy-base-sepolia.js --network baseSepolia",
+    "demo:base-sepolia": "hardhat run scripts/full-demo-base-sepolia.js --network baseSepolia",
     "demo": "python3 -m http.server 4173 -d demo",
     "check": "pnpm compile && pnpm test"
   },
