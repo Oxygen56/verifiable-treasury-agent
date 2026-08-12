@@ -1,4 +1,4 @@
-# Devpost submission draft
+# Devpost submission record
 
 ## Title
 
@@ -47,6 +47,7 @@ Solidity, OpenZeppelin Contracts, Hardhat, ethers.js, Base Sepolia, a Circle tes
 
 ## Evidence checklist
 
+- [x] Devpost submission: https://devpost.com/software/verifiable-treasury-agent
 - [x] Public repository URL: https://github.com/Oxygen56/verifiable-treasury-agent
 - [x] Public demo URL configured: https://oxygen56.github.io/verifiable-treasury-agent/
 - [x] Base Sepolia treasury contract and deployment receipt: https://sepolia.basescan.org/address/0x7b46d90981e221e39F93F5bAfDEAaA39eF1ea7f3
@@ -55,4 +56,5 @@ Solidity, OpenZeppelin Contracts, Hardhat, ethers.js, Base Sepolia, a Circle tes
 - [x] Test suite result and benchmark artifact
 - [x] Supporting PDF: `output/pdf/verifiable-treasury-agent-evidence.pdf`
 - [x] Prior-work, AI, dependency, and test-token disclosure
-- [ ] Submission form reviewed for AI disclosure or personal legal declarations before final submit
+- [x] Final form reviewed: no separate AI Disclosure or personal legal declaration appeared; AI use remains disclosed in the project story and organizer-only description
+- [x] Submitted to NTU InnovateX Hackathon 2026; Devpost confirmed submission and an edit deadline of August 14, 2026 at 11:45 AM EDT (August 14, 2026 at 23:45 Beijing time)
