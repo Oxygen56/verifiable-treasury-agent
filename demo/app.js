@@ -33,8 +33,12 @@ fetch("../evidence/benchmark.json").then((response) => response.json()).then((da
 
 fetch("../evidence/base-sepolia.json").then((response) => response.json()).then((data) => {
   const link = document.querySelector("#explorer-link");
-  link.href = data.explorer;
-  document.querySelector("#testnet-status").textContent = `${data.deploymentTx.slice(0, 10)}… · verified receipt`;
+  const release = data.transactions[data.transactions.length - 1];
+  link.href = release.explorer;
+  document.querySelector("#testnet-status").textContent = `${data.totals.transactionCount} receipts · reconciliation ${data.reconciliation.passed ? "passed" : "failed"}`;
+  document.querySelector("#tx-count").textContent = data.totals.transactionCount;
+  document.querySelector("#gas-total").textContent = Number(data.totals.gasUsed).toLocaleString();
+  document.querySelector("#reconciled").textContent = data.reconciliation.passed ? "PASSED" : "FAILED";
 }).catch(() => {});
 
 fetch("../evidence/public-links.json").then((response) => response.json()).then((data) => {

@@ -18,7 +18,7 @@ Cross-border treasury teams want the speed of stablecoins and the usability of A
 
 ## Solution
 
-Verifiable Treasury Agent separates explanation from authority. An AI may turn an invoice into a proposed plan, but an auditable contract is the only authority that can move state and funds. It binds every settlement to a salted invoice commitment and an expiring compliance-policy digest; applies per-payer daily limits and two-person approval above a threshold; escrows test USDC through a challenge window; rechecks sanctions/policy status at approval and release; and supports pre-release cancellation plus permissionless expiry rollback.
+Verifiable Treasury Agent separates explanation from authority. An AI may turn an invoice into a proposed plan, but an auditable contract is the only authority that can move state and funds. It binds every settlement to a salted invoice commitment and an expiring compliance-policy digest; applies per-payer daily limits and two-person approval above a threshold; escrows an ERC-20 settlement asset through a challenge window; rechecks sanctions/policy status at approval and release; and supports pre-release cancellation plus permissionless expiry rollback.
 
 ## Key features
 
@@ -35,12 +35,12 @@ Treasury operators, payment teams, exporters/importers, compliance approvers, an
 
 ## Technologies
 
-Solidity, OpenZeppelin Contracts, Hardhat, ethers.js, Base Sepolia, Circle test USDC, static web demo, GitHub Actions.
+Solidity, OpenZeppelin Contracts, Hardhat, ethers.js, Base Sepolia, a Circle test-USDC deployment adapter, explicitly labeled no-value mUSD for the verified public demo, static web demo, GitHub Actions.
 
 ## Demo script (three minutes)
 
 1. **0:00–0:25 — the risk:** show that an AI recommendation is not authorization; highlight the contract-only trust boundary.
-2. **0:25–1:15 — successful route:** propose a 15,000 test-USDC invoice commitment; show two distinct approvals; fund escrow; wait through the challenge window; release; open the transaction receipt and reconciliation.
+2. **0:25–1:15 — successful route:** propose a 15,000 mUSD invoice commitment; show two distinct approvals; fund escrow; wait through the challenge window; release; open the public transaction receipt and reconciliation. Explicitly state that mUSD is the project's valueless demo asset, not USDC.
 3. **1:15–2:10 — failure controls:** sanction the beneficiary and show the release reverting with unchanged state; show a daily-limit failure; cancel a funded settlement and verify the payer refund; run expiry rollback.
 4. **2:10–2:40 — privacy:** reveal a synthetic invoice plus salt to verify the on-chain commitment; demonstrate that wrong data fails and raw invoice/KYC data is absent from storage/events.
 5. **2:40–3:00 — evidence and boundary:** show tests, benchmark JSON, public Base Sepolia explorer links, prior-work/AI disclosure, and the precise limitation that transfers are revocable only before release.
@@ -49,8 +49,9 @@ Solidity, OpenZeppelin Contracts, Hardhat, ethers.js, Base Sepolia, Circle test 
 
 - [x] Public repository URL: https://github.com/Oxygen56/verifiable-treasury-agent
 - [x] Public demo URL configured: https://oxygen56.github.io/verifiable-treasury-agent/
-- [ ] Base Sepolia contract and deployment transaction
-- [ ] At least one full test-USDC settlement transaction sequence
+- [x] Base Sepolia treasury contract and deployment receipt: https://sepolia.basescan.org/address/0x7b46d90981e221e39F93F5bAfDEAaA39eF1ea7f3
+- [x] Full 16-transaction public settlement sequence using explicitly labeled valueless mUSD: `evidence/base-sepolia.json`
+- [x] Final release and passed reconciliation receipt: https://sepolia.basescan.org/tx/0xfcbc7389b1ef0a1861b8873fccb2a97156c448e349986a6124b7c1f4f928cf1b
 - [x] Test suite result and benchmark artifact
 - [x] Supporting PDF: `output/pdf/verifiable-treasury-agent-evidence.pdf`
 - [x] Prior-work, AI, dependency, and test-token disclosure

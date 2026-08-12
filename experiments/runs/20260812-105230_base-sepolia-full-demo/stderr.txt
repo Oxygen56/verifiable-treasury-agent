@@ -1,0 +1,12 @@
+$ hardhat run scripts/full-demo-base-sepolia.js --network baseSepolia
+ProviderError: execution reverted
+    at HttpProvider.request (/Users/oxygen/iCloud云盘（归档）/Desktop/竞赛/ntu-innovatex-2026/node_modules/.pnpm/hardhat@2.22.19_supports-color@8.1.1_ts-node@10.9.2_@types+node@26.2.0_typescript@7.0.2__typescript@7.0.2/node_modules/hardhat/src/internal/core/providers/http.ts:107:21)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at HardhatEthersProvider.estimateGas (/Users/oxygen/iCloud云盘（归档）/Desktop/竞赛/ntu-innovatex-2026/node_modules/.pnpm/@nomicfoundation+hardhat-ethers@3.1.3_ethers@6.17.0_hardhat@2.22.19_supports-color@8.1._98320af1decf843dff9ca30059cd1085/node_modules/@nomicfoundation/hardhat-ethers/src/internal/hardhat-ethers-provider.ts:246:27)
+    at /Users/oxygen/iCloud云盘（归档）/Desktop/竞赛/ntu-innovatex-2026/node_modules/.pnpm/@nomicfoundation+hardhat-ethers@3.1.3_ethers@6.17.0_hardhat@2.22.19_supports-color@8.1._98320af1decf843dff9ca30059cd1085/node_modules/@nomicfoundation/hardhat-ethers/src/signers.ts:339:35
+    at async Promise.all (index 0)
+    at HardhatEthersSigner._sendUncheckedTransaction (/Users/oxygen/iCloud云盘（归档）/Desktop/竞赛/ntu-innovatex-2026/node_modules/.pnpm/@nomicfoundation+hardhat-ethers@3.1.3_ethers@6.17.0_hardhat@2.22.19_supports-color@8.1._98320af1decf843dff9ca30059cd1085/node_modules/@nomicfoundation/hardhat-ethers/src/signers.ts:360:7)
+    at HardhatEthersSigner.sendTransaction (/Users/oxygen/iCloud云盘（归档）/Desktop/竞赛/ntu-innovatex-2026/node_modules/.pnpm/@nomicfoundation+hardhat-ethers@3.1.3_ethers@6.17.0_hardhat@2.22.19_supports-color@8.1._98320af1decf843dff9ca30059cd1085/node_modules/@nomicfoundation/hardhat-ethers/src/signers.ts:185:18)
+    at send (/Users/oxygen/iCloud云盘（归档）/Desktop/竞赛/ntu-innovatex-2026/node_modules/.pnpm/ethers@6.17.0/node_modules/ethers/src.ts/contract/contract.ts:313:20)
+    at Proxy.releaseSettlement (/Users/oxygen/iCloud云盘（归档）/Desktop/竞赛/ntu-innovatex-2026/node_modules/.pnpm/ethers@6.17.0/node_modules/ethers/src.ts/contract/contract.ts:352:16)
+    at record (/Users/oxygen/iCloud云盘（归档）/Desktop/竞赛/ntu-innovatex-2026/scripts/full-demo-base-sepolia.js:22:16)

@@ -1,0 +1,229 @@
+{
+  "generatedAt": "2026-08-12T02:56:31.305Z",
+  "network": "Base Sepolia",
+  "chainId": "84532",
+  "deployer": "0x7c2164e3D612726Ed1C0451b2e04B62F85dB9f56",
+  "token": {
+    "address": "0x38eaBEB9F1835F0204D4148f19e3374C9746F6C8",
+    "name": "Mock Test Dollar",
+    "symbol": "mUSD",
+    "financialValue": "none",
+    "warning": "Project-deployed demo token; not USDC and not backed by fiat."
+  },
+  "treasury": "0x7b46d90981e221e39F93F5bAfDEAaA39eF1ea7f3",
+  "settlement": {
+    "id": 1,
+    "amountBaseUnits": "15000000000",
+    "requiredDistinctApprovals": 2,
+    "releaseAfter": 1786503223,
+    "expiresAt": 1786506778
+  },
+  "transactions": [
+    {
+      "label": "fund ephemeral approverA gas",
+      "hash": "0x74a4dfc779db973209059e4aabef753ecda341c00147bf006f9b6297e116a1a7",
+      "explorer": "https://sepolia.basescan.org/tx/0x74a4dfc779db973209059e4aabef753ecda341c00147bf006f9b6297e116a1a7",
+      "blockNumber": 45367434,
+      "blockTimestamp": 1786503156,
+      "status": 1,
+      "gasUsed": "21000",
+      "gasPriceWei": "6000000",
+      "feeWei": "126000000000"
+    },
+    {
+      "label": "fund ephemeral approverB gas",
+      "hash": "0x93a6261c754b188d1b69805ae5fb5735fb4ad87b2f8fdbf14619476108dabcee",
+      "explorer": "https://sepolia.basescan.org/tx/0x93a6261c754b188d1b69805ae5fb5735fb4ad87b2f8fdbf14619476108dabcee",
+      "blockNumber": 45367436,
+      "blockTimestamp": 1786503160,
+      "status": 1,
+      "gasUsed": "21000",
+      "gasPriceWei": "6328125",
+      "feeWei": "132890625000"
+    },
+    {
+      "label": "fund ephemeral compliance gas",
+      "hash": "0x4ef61ae9bc4f248fb2ec466ffc2cc6ba3640ce3f6b3438c196ba39fe01246b3a",
+      "explorer": "https://sepolia.basescan.org/tx/0x4ef61ae9bc4f248fb2ec466ffc2cc6ba3640ce3f6b3438c196ba39fe01246b3a",
+      "blockNumber": 45367437,
+      "blockTimestamp": 1786503162,
+      "status": 1,
+      "gasUsed": "21000",
+      "gasPriceWei": "6000000",
+      "feeWei": "126000000000"
+    },
+    {
+      "label": "deploy explicitly labeled demo token",
+      "hash": "0xb8affd442ff036bca150e2baea836fb875d93797aa87006a55786f38b0cfc4b5",
+      "explorer": "https://sepolia.basescan.org/tx/0xb8affd442ff036bca150e2baea836fb875d93797aa87006a55786f38b0cfc4b5",
+      "blockNumber": 45367438,
+      "blockTimestamp": 1786503164,
+      "status": 1,
+      "gasUsed": "521449",
+      "gasPriceWei": "6000000",
+      "feeWei": "3128694000000"
+    },
+    {
+      "label": "deploy verifiable treasury",
+      "hash": "0xb4ae48bf33d89adf0d1d878ad96585d92cf7f4d407ca5381917e245dfce52353",
+      "explorer": "https://sepolia.basescan.org/tx/0xb4ae48bf33d89adf0d1d878ad96585d92cf7f4d407ca5381917e245dfce52353",
+      "blockNumber": 45367439,
+      "blockTimestamp": 1786503166,
+      "status": 1,
+      "gasUsed": "1819583",
+      "gasPriceWei": "6000000",
+      "feeWei": "10917498000000"
+    },
+    {
+      "label": "grant approver A",
+      "hash": "0x086cf0c842abe5d8883b39b2f816a786ebe0f7cbb621878bf92ae63d4d8db2f5",
+      "explorer": "https://sepolia.basescan.org/tx/0x086cf0c842abe5d8883b39b2f816a786ebe0f7cbb621878bf92ae63d4d8db2f5",
+      "blockNumber": 45367441,
+      "blockTimestamp": 1786503170,
+      "status": 1,
+      "gasUsed": "51411",
+      "gasPriceWei": "6000000",
+      "feeWei": "308466000000"
+    },
+    {
+      "label": "grant approver B",
+      "hash": "0x291f786854587a6c308ca6e3e942326b48538050f0a5b631a047ea8c9e2c9092",
+      "explorer": "https://sepolia.basescan.org/tx/0x291f786854587a6c308ca6e3e942326b48538050f0a5b631a047ea8c9e2c9092",
+      "blockNumber": 45367442,
+      "blockTimestamp": 1786503172,
+      "status": 1,
+      "gasUsed": "51411",
+      "gasPriceWei": "6000000",
+      "feeWei": "308466000000"
+    },
+    {
+      "label": "grant compliance",
+      "hash": "0xe5068f40664c5793b9abf66428181259c8b5877df48e37613826ad31a537959f",
+      "explorer": "https://sepolia.basescan.org/tx/0xe5068f40664c5793b9abf66428181259c8b5877df48e37613826ad31a537959f",
+      "blockNumber": 45367443,
+      "blockTimestamp": 1786503174,
+      "status": 1,
+      "gasUsed": "51411",
+      "gasPriceWei": "6000000",
+      "feeWei": "308466000000"
+    },
+    {
+      "label": "mint valueless demo token",
+      "hash": "0x523d995842b9e6c55691c662f5e30afd2fe8e42bb17be1cabb1892d0568680e4",
+      "explorer": "https://sepolia.basescan.org/tx/0x523d995842b9e6c55691c662f5e30afd2fe8e42bb17be1cabb1892d0568680e4",
+      "blockNumber": 45367444,
+      "blockTimestamp": 1786503176,
+      "status": 1,
+      "gasUsed": "68397",
+      "gasPriceWei": "6000000",
+      "feeWei": "410382000000"
+    },
+    {
+      "label": "approve escrow allowance",
+      "hash": "0xa5b6dc85797ae2bd78c38d370ee8b8aed5da2af0a8bee9240e59e53bda7f9596",
+      "explorer": "https://sepolia.basescan.org/tx/0xa5b6dc85797ae2bd78c38d370ee8b8aed5da2af0a8bee9240e59e53bda7f9596",
+      "blockNumber": 45367445,
+      "blockTimestamp": 1786503178,
+      "status": 1,
+      "gasUsed": "46347",
+      "gasPriceWei": "6328125",
+      "feeWei": "293289609375"
+    },
+    {
+      "label": "record expiring compliance attestation",
+      "hash": "0xabf7ec43a0ad5ed7b67633c6f961dc3d9aaf07338fd95543491a93602643ca3b",
+      "explorer": "https://sepolia.basescan.org/tx/0xabf7ec43a0ad5ed7b67633c6f961dc3d9aaf07338fd95543491a93602643ca3b",
+      "blockNumber": 45367447,
+      "blockTimestamp": 1786503182,
+      "status": 1,
+      "gasUsed": "71872",
+      "gasPriceWei": "6000000",
+      "feeWei": "431232000000"
+    },
+    {
+      "label": "propose 15,000-token settlement",
+      "hash": "0xe9dd27aab654b1bd26620076513b5ab1cb97dba647a562c969aac45e066faeb8",
+      "explorer": "https://sepolia.basescan.org/tx/0xe9dd27aab654b1bd26620076513b5ab1cb97dba647a562c969aac45e066faeb8",
+      "blockNumber": 45367448,
+      "blockTimestamp": 1786503184,
+      "status": 1,
+      "gasUsed": "197265",
+      "gasPriceWei": "6000000",
+      "feeWei": "1183590000000"
+    },
+    {
+      "label": "distinct approval 1 of 2",
+      "hash": "0xd25206ed605c136f1ddb7466b059d3126471eaf4c44650b4e496d1f02f48ac08",
+      "explorer": "https://sepolia.basescan.org/tx/0xd25206ed605c136f1ddb7466b059d3126471eaf4c44650b4e496d1f02f48ac08",
+      "blockNumber": 45367449,
+      "blockTimestamp": 1786503186,
+      "status": 1,
+      "gasUsed": "69656",
+      "gasPriceWei": "6000000",
+      "feeWei": "417936000000"
+    },
+    {
+      "label": "distinct approval 2 of 2",
+      "hash": "0x1945e85f2f9e5550dfa0e2233a7e54ee02b87ef3c8d138387b9f5773409db846",
+      "explorer": "https://sepolia.basescan.org/tx/0x1945e85f2f9e5550dfa0e2233a7e54ee02b87ef3c8d138387b9f5773409db846",
+      "blockNumber": 45367451,
+      "blockTimestamp": 1786503190,
+      "status": 1,
+      "gasUsed": "69886",
+      "gasPriceWei": "6000000",
+      "feeWei": "419316000000"
+    },
+    {
+      "label": "fund revocable escrow",
+      "hash": "0x18748ce64bd3e75fc20832f4def51552593ab29494c194de357a42d74d138883",
+      "explorer": "https://sepolia.basescan.org/tx/0x18748ce64bd3e75fc20832f4def51552593ab29494c194de357a42d74d138883",
+      "blockNumber": 45367452,
+      "blockTimestamp": 1786503192,
+      "status": 1,
+      "gasUsed": "99994",
+      "gasPriceWei": "6000000",
+      "feeWei": "599964000000"
+    },
+    {
+      "label": "release after challenge window (recovered after RPC estimate lag)",
+      "hash": "0xfcbc7389b1ef0a1861b8873fccb2a97156c448e349986a6124b7c1f4f928cf1b",
+      "explorer": "https://sepolia.basescan.org/tx/0xfcbc7389b1ef0a1861b8873fccb2a97156c448e349986a6124b7c1f4f928cf1b",
+      "blockNumber": 45367551,
+      "blockTimestamp": 1786503390,
+      "status": 1,
+      "gasUsed": "74954",
+      "gasPriceWei": "6000000",
+      "feeWei": "449724000000",
+      "observedConfirmationLatencyMs": 4539
+    }
+  ],
+  "totals": {
+    "transactionCount": 16,
+    "gasUsed": "3256636",
+    "feeWei": "19561914234375"
+  },
+  "recovery": {
+    "initialReleaseBroadcast": false,
+    "cause": "The public RPC returned a transient estimateGas revert after the challenge window; a later static call passed and release was sent with an explicit gas limit.",
+    "safety": "The settlement remained in funded, revocable escrow throughout; no token balance was lost."
+  },
+  "reconciliation": {
+    "funded": {
+      "payer": "0",
+      "escrow": "15000000000",
+      "state": 3
+    },
+    "final": {
+      "beneficiary": "15000000000",
+      "escrow": "0",
+      "state": 4
+    },
+    "passed": true
+  },
+  "claimBoundary": [
+    "Receipts prove public Base Sepolia execution only.",
+    "The demo token has no financial value and is not USDC.",
+    "Compliance data is a synthetic policy digest, not certified screening.",
+    "Ephemeral role keys are demonstration-only and are not production key management."
+  ]
+}

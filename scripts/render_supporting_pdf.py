@@ -17,6 +17,7 @@ RED = HexColor("#B73D2D")
 MUTED = HexColor("#61736C")
 
 metrics = json.loads((ROOT / "evidence" / "benchmark.json").read_text())
+testnet = json.loads((ROOT / "evidence" / "base-sepolia.json").read_text())
 
 def text(c, x, y, value, size=12, font="Helvetica", color=INK):
     c.setFont(font, size)
@@ -133,12 +134,16 @@ tests = [
     "Policy-digest change invalidates a previously approved release",
 ]
 for i, line in enumerate(tests):
-    col = 0 if i < 4 else 1
-    row = i if i < 4 else i-4
-    x = (0.8 + col*6.15)*inch; y = (3.3 - row*0.62)*inch
+    x = 0.8*inch; y = (3.3 - i*0.38)*inch
     c.setFillColor(LIME); c.circle(x+5, y+4, 4, fill=1, stroke=0)
-    wrapped(c, x+20, y+9, line, 5.4*inch, 11, 15, "Helvetica", white)
+    wrapped(c, x+20, y+9, line, 5.8*inch, 9.5, 12, "Helvetica", white)
 text(c, 0.8*inch, 0.55*inch, "Local EVM measurements are reproducible. They do not claim public-RPC latency, fiat cost, production security, or regulatory approval.", 9, "Helvetica", HexColor("#9FB2AA"))
+text(c, 7.2*inch, 3.7*inch, "PUBLIC BASE SEPOLIA", 10, "Helvetica-Bold", LIME)
+text(c, 7.2*inch, 3.28*inch, str(testnet["totals"]["transactionCount"]), 31, "Helvetica-Bold", LIME)
+text(c, 8.05*inch, 3.36*inch, "successful public receipts", 11, "Helvetica-Bold", white)
+wrapped(c, 7.2*inch, 2.86*inch, "Two distinct approvals, 15,000 valueless mUSD in revocable escrow, delayed release, and final balance reconciliation executed on chain.", 5.0*inch, 10.5, 15, "Helvetica", white)
+text(c, 7.2*inch, 2.0*inch, "RECOVERY PROOF", 9, "Helvetica-Bold", LIME)
+wrapped(c, 7.2*inch, 1.7*inch, "A transient gas-estimation revert occurred before broadcast. Escrow stayed funded; a later release succeeded and reconciled escrow to zero.", 5.0*inch, 10, 14, "Helvetica", white)
 c.showPage()
 
 # Page 4
@@ -146,7 +151,7 @@ c.setFillColor(PAPER); c.rect(0, 0, W, H, fill=1, stroke=0); header(c, "Open evi
 text(c, 0.7*inch, H-1.15*inch, "Built to be challenged.", 34, "Helvetica-Bold")
 box(c, 0.8*inch, 3.7*inch, 3.65*inch, 1.65*inch, "OPEN SOURCE", "Apache-2.0 repository with contract source, tests, benchmark output, architecture, disclosure, and CI.", white)
 box(c, 4.85*inch, 3.7*inch, 3.65*inch, 1.65*inch, "PUBLIC DEMO", "A judge-facing control room shows both the successful path and the failure paths that protect treasury funds.", MINT)
-box(c, 8.9*inch, 3.7*inch, 3.65*inch, 1.65*inch, "BASE SEPOLIA", "Deployment evidence uses public testnet receipts and Circle test USDC. Test assets have no financial value.", white)
+box(c, 8.9*inch, 3.7*inch, 3.65*inch, 1.65*inch, "BASE SEPOLIA", f'{testnet["totals"]["transactionCount"]} successful public receipts prove the full two-approval path. The asset is explicitly labeled valueless mUSD - not USDC.', white)
 text(c, 0.8*inch, 3.1*inch, "HONEST CLAIM BOUNDARY", 10, "Helvetica-Bold", GREEN)
 limits = [
     "Compliance digest demonstrates policy binding, not a certified sanctions-screening service.",

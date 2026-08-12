@@ -80,7 +80,8 @@ async function main() {
   while ((await provider.getBlock("latest")).timestamp < releaseAfter) {
     await new Promise((resolve) => setTimeout(resolve, 2000));
   }
-  await record("release after challenge window", treasury.releaseSettlement(1));
+  await treasury.releaseSettlement.staticCall(1);
+  await record("release after challenge window", treasury.releaseSettlement(1, { gasLimit: 300000 }));
   const final = {
     beneficiary: (await token.balanceOf(deployer.address)).toString(),
     escrow: (await token.balanceOf(treasury.target)).toString(),

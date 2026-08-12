@@ -45,6 +45,15 @@ pnpm demo:base-sepolia
 
 This second route proves real Base Sepolia transaction execution without depending on a test-USDC faucet. It does not claim that the demo token is USDC, backed, or valuable.
 
+### Verified public run
+
+- Treasury contract: [`0x7b46d90981e221e39F93F5bAfDEAaA39eF1ea7f3`](https://sepolia.basescan.org/address/0x7b46d90981e221e39F93F5bAfDEAaA39eF1ea7f3)
+- Explicitly labeled demo token: [`0x38eaBEB9F1835F0204D4148f19e3374C9746F6C8`](https://sepolia.basescan.org/address/0x38eaBEB9F1835F0204D4148f19e3374C9746F6C8)
+- Final release receipt: [`0xfcbc7389…f928cf1b`](https://sepolia.basescan.org/tx/0xfcbc7389b1ef0a1861b8873fccb2a97156c448e349986a6124b7c1f4f928cf1b)
+- Evidence manifest: [`evidence/base-sepolia.json`](evidence/base-sepolia.json) with 16 successful receipts and a passed escrow reconciliation
+
+The public RPC first returned a transient gas-estimation revert after the challenge window, before any release transaction was broadcast. The 15,000 mUSD remained in funded, revocable escrow. A later static call passed; the release was broadcast with an explicit gas limit and reconciled to `escrow = 0`, `beneficiary = 15,000`, `state = Released`. This is recorded as recovery evidence rather than hidden.
+
 ## Repository map
 
 - `contracts/VerifiableTreasury.sol` — deterministic settlement state machine
@@ -52,6 +61,7 @@ This second route proves real Base Sepolia transaction execution without dependi
 - `test/VerifiableTreasury.test.js` — positive and negative controls
 - `scripts/benchmark.js` — reproducible gas/latency/reconciliation evidence
 - `scripts/deploy-base-sepolia.js` — real testnet deployment using Circle test USDC
+- `scripts/recover-base-sepolia-demo.js` — receipt audit and safe recovery of the recorded public demo
 - `demo/` — judge-facing product story and evidence viewer
 - `docs/ARCHITECTURE.md` — trust boundary and state transitions
 - `DISCLOSURE.md` — prior work, AI use, data, tools, and dependencies
