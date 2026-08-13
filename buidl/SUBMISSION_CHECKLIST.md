@@ -23,13 +23,13 @@
 - [x] Public final state reconciles to payer 15,000 mUSD, clean beneficiary 15,000 mUSD, blocked beneficiary 0, escrow 0, `totalEscrowed = 0`, and solvent.
 - [x] Payer, beneficiaries, approvers, compliance actors, and relayer are described as distinct test-wallet addresses/on-chain roles, not proven independent humans or organizations.
 - [x] Synthetic invoice disclosure and salt are explicitly labeled intentionally public test data.
-- [x] A 114.9-second narrated 1080p walkthrough opens with the status-0 block and refund, and preserves the mUSD/synthetic/non-production boundary.
+- [x] A 114.4-second narrated 1080p walkthrough opens with the status-0 block and refund, and preserves the mUSD/synthetic/non-production boundary.
 - [x] A real read-only, schema-valid Codex explanation trace is public and explicitly non-authoritative.
 
 ## Reproducible verification
 
 - [x] `pnpm install --frozen-lockfile && pnpm check` is the clean local verification path.
-- [x] 37 repository-wide passing checks are recorded as 30 current V2 checks plus 7 retained historical V1 controls; the V2-only bundle reproduces the 30 current checks.
+- [x] 40 repository-wide passing checks are recorded as 33 current V2 checks plus 7 retained historical V1 controls; the V2-only bundle reproduces the 33 current checks.
 - [x] 64 deterministic generated paths are labeled stateful regression, not formal verification or exhaustive fuzzing.
 - [x] V2 coverage is reported completely: 98.84% statements, 94.44% functions, 99.14% lines, and 45.45% branches.
 - [x] Filtered Slither high/medium triage is reported as 26 contracts, 63 detectors, zero findings after triage, and not an independent audit.

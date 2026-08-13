@@ -42,14 +42,15 @@ Raw invoices and KYC records are designed to remain off-chain. V2 stores salted,
 
 ## Security and verification boundary
 
-- 37 repository-wide checks passed: 30 current V2 contract/state-path/planner checks plus 7 retained historical V1 controls. The V2-only judge bundle contains and reproduces the 30 current checks; the state-path test exercises 64 deterministic generated paths.
+- 40 repository-wide checks passed: 33 current V2 contract/state-path/planner/live-verifier checks plus 7 retained historical V1 controls. The V2-only judge bundle contains and reproduces the 33 current checks; the state-path test exercises 64 deterministic generated paths.
 - V2 measured 98.84% statement, 94.44% function, 99.14% line, and 45.45% branch coverage.
 - A filtered Slither high/medium triage analyzed 26 contracts with 63 detectors and returned zero findings after documented triage.
 - The V2 runtime is 22,427 bytes, with 2,149 bytes of EIP-170 headroom.
 - The locally compiled runtime and the Base Sepolia runtime have the same hash after normalizing compiler-declared immutable slots.
 - A read-only public-RPC verifier checks all 26 transactions in chain order against their caller, target, method, settlement ID, and critical event values/order. It uses a historical call and trace to decode the sole status-0 release as `BeneficiarySanctioned`, then reconciles final balances, allowance, escrow, states, clearance consumption, invoice disclosure, and solvency.
+- The public browser control room has a narrower live-RPC verifier for receipt statuses, terminal states, balances, `totalEscrowed`, and solvency. It has no wallet, signer, or broadcast method and treats RPC unavailability separately from proof failure.
 
-These checks are project-generated evidence. They are not an independent audit, formal verification, exhaustive fuzzing proof, production certification, or regulatory approval. Third-party explorer source verification has not been completed; bytecode matching is a local compiler-to-chain comparison. Production use would require independent audit, multisig governance, hardened key custody, monitoring, incident response, legal review, and regulated integrations.
+These checks are project-generated evidence. They are not an independent audit, formal verification, exhaustive fuzzing proof, production certification, or regulatory approval. Blockscout publishes the submitted standard-JSON V2 source and reports verified but partial matching with unchanged bytecode; it does not report full verification. The separate bytecode check remains a local compiler-to-chain comparison with immutable slots normalized. Production use would require independent audit, multisig governance, hardened key custody, monitoring, incident response, legal review, and regulated integrations.
 
 ## Version history and new work during the event
 

@@ -49,6 +49,7 @@ The V2 manifest records 26 public transaction receipts across two outcomes using
 | Final reconciliation | Payer 15,000 mUSD; clean beneficiary 15,000 mUSD; blocked beneficiary 0; escrow 0; `totalEscrowed = 0`; solvent |
 
 - V2 treasury: [`0x7B92aB3D8BA17cF5f28C60E5c1FC326862dD6395`](https://sepolia.basescan.org/address/0x7B92aB3D8BA17cF5f28C60E5c1FC326862dD6395)
+- Readable source: [`VerifiableTreasuryV2 on Blockscout`](https://base-sepolia.blockscout.com/address/0x7B92aB3D8BA17cF5f28C60E5c1FC326862dD6395?tab=contract) (source published; Blockscout reports partial verification and unchanged bytecode)
 - Demo token: [`0x2254a6A25f3284faaF79522bc1162743e0c39157`](https://sepolia.basescan.org/address/0x2254a6A25f3284faaF79522bc1162743e0c39157)
 - Clean release: [`0xb1d2be7a…fa3d43`](https://sepolia.basescan.org/tx/0xb1d2be7aee2381be2c7e7040b44eb669b36c656cc7bc14e83b7e161a16fa3d43)
 - Failed release after sanctions update: [`0xf4be9274…31f8db`](https://sepolia.basescan.org/tx/0xf4be9274fc867ae0efea504966649f37bbce6dfcbb797c92ec0ce3f22031f8db)
@@ -77,16 +78,16 @@ The planner emits an unsigned EIP-712 plan and contains no signer, wallet, provi
 pnpm demo
 ```
 
-Then open `http://localhost:4173/demo/`. The static interface reads the committed public manifest; it does not connect a wallet or broadcast a transaction.
+Then open `http://localhost:4173/demo/`. The interface replays the committed public manifest and can perform a fresh, read-only Base Sepolia check of all 26 receipts, both settlement terminal states, balances, escrow liability, and solvency. It never connects a wallet, signs, or broadcasts a transaction.
 
 ## Verification record
 
-- **37 repository-wide passing checks:** 30 current V2 contract/state-path/planner checks plus 7 retained historical V1 controls. The V2-only judge bundle reproduces the 30 current checks.
+- **40 repository-wide passing checks:** 33 current V2 contract/state-path/planner/live-verifier checks plus 7 retained historical V1 controls. The V2-only judge bundle reproduces the 33 current checks.
 - **64 deterministic generated state paths** checking solvency, exact conservation, nonce monotonicity, and single terminal outcome. This is not a formal proof or a full fuzzing campaign.
 - **V2 coverage:** 98.84% statements, 94.44% functions, and 99.14% lines; branch coverage is 45.45%.
 - **Slither triage:** 26 contracts, 63 detectors, and zero findings in the filtered high/medium scan after documented triage. This is not an independent security audit.
 - **Deployability:** 22,427-byte runtime, 2,149 bytes below the EIP-170 limit.
-- **Bytecode evidence:** the locally compiled and on-chain runtimes are both 22,427 bytes and have the same hash after normalizing the compiler-declared immutable slots. This is not third-party explorer source verification.
+- **Source and bytecode evidence:** Blockscout publishes the standard-JSON V2 source and constructor arguments, reports verified/partial matching and unchanged bytecode, but not full verification. The locally compiled and on-chain runtimes are both 22,427 bytes and have the same hash after normalizing the compiler-declared immutable slots.
 - **Public execution metrics:** all 26 receipts consumed 9,303,697 gas and 0.000055950883453125 test ETH over a 736-second first-to-last block span. The median observed confirmation latency is 7.499 seconds for the nine transactions whose client-side timing was retained; it is not a 26-transaction latency sample.
 - **Real Codex boundary run:** a read-only Codex CLI invocation using the CLI-reported `gpt-5.6-sol` model explained the deterministic synthetic plan into a strict JSON schema in 27.432 seconds. It returned `UNSIGNED_REVIEW_REQUIRED`, named the stop conditions, performed no requested tools/signing/broadcast/state change, and reported 20,878 tokens; no metered API cost was exposed.
 
@@ -99,10 +100,11 @@ The recorded commands and outputs are under [`experiments/runs/`](experiments/ru
 - [`test/VerifiableTreasuryV2.test.js`](test/VerifiableTreasuryV2.test.js) — V2 security and behavior controls
 - [`test/VerifiableTreasuryV2.invariants.test.js`](test/VerifiableTreasuryV2.invariants.test.js) — deterministic multi-path conservation checks
 - [`test/orchestrator-v2.test.js`](test/orchestrator-v2.test.js) — contract/planner hash equivalence and no-authority checks
+- [`test/live-verifier.test.js`](test/live-verifier.test.js) — browser RPC verification and fail-closed evidence checks
 - [`scripts/verify-base-sepolia-v2-evidence.js`](scripts/verify-base-sepolia-v2-evidence.js) — read-only receipt and state verifier
 - [`evidence/codex-explanation-v2.json`](evidence/codex-explanation-v2.json) — real, schema-constrained Codex explanation-only trace and claim boundary
 - [`demo/`](demo/) — judge-facing evidence replay
-- [`output/video/verifiable-treasury-agent-v2-demo.mp4`](output/video/verifiable-treasury-agent-v2-demo.mp4) — 114.9-second narrated V2 evidence walkthrough
+- [`output/video/verifiable-treasury-agent-v2-demo.mp4`](output/video/verifiable-treasury-agent-v2-demo.mp4) — 114.4-second narrated V2 evidence walkthrough
 - [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) — trust boundary, controls, and state transitions
 - [`DISCLOSURE.md`](DISCLOSURE.md) — prior work, AI, dependency, data, and evidence disclosure
 - [`SUBMISSION.md`](SUBMISSION.md) — Devpost-ready story and three-minute demo path

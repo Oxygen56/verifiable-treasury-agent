@@ -25,12 +25,12 @@ Verifiable Treasury Agent V2 separates orchestration from authority:
 - Live evidence replay: https://oxygen56.github.io/verifiable-treasury-agent/
 - Public source: https://github.com/Oxygen56/verifiable-treasury-agent
 - Devpost: https://devpost.com/software/verifiable-treasury-agent
-- Narrated walkthrough: `output/video/verifiable-treasury-agent-v2-demo.mp4` (114.9 seconds, 1080p)
+- Narrated walkthrough: `output/video/verifiable-treasury-agent-v2-demo.mp4` (114.4 seconds, 1080p)
 - Local verification: `pnpm install --frozen-lockfile && pnpm check`
 - Local demo: `pnpm demo`, then open `http://localhost:4173`
 - Deterministic unsigned planner: `node scripts/plan-settlement-v2.js evidence/sample-invoice-v2.json`
 
-The static demo reads the committed V2 manifest. It does not connect a wallet, sign, or broadcast a new transaction.
+The demo reads the committed V2 manifest and can freshly verify the 26 receipt statuses, terminal states, balances, escrow liability, and solvency through a public Base Sepolia RPC. It does not connect a wallet, sign, or broadcast a transaction.
 
 ## Public Base Sepolia evidence
 
@@ -54,12 +54,12 @@ The manifest proves that the payer, two beneficiaries, two approvers, two compli
 
 ## Verification record
 
-- **37 repository-wide passing checks:** 30 current V2 contract/state-path/planner checks plus 7 retained historical V1 controls. The V2-only judge bundle reproduces the 30 current checks.
+- **40 repository-wide passing checks:** 33 current V2 contract/state-path/planner/live-verifier checks plus 7 retained historical V1 controls. The V2-only judge bundle reproduces the 33 current checks.
 - **64 deterministic generated state paths** check solvency, exact conservation, nonce monotonicity, and terminal-state exclusivity. They are not formal verification or an exhaustive fuzzing proof.
 - **V2 coverage:** 98.84% statements, 94.44% functions, 99.14% lines, and 45.45% branches.
 - **Slither triage:** 26 contracts and 63 detectors returned zero findings in the filtered high/medium scan after documented triage. This is not an independent audit.
 - **Deployability:** the V2 runtime is 22,427 bytes, leaving 2,149 bytes below the EIP-170 limit.
-- **Bytecode evidence:** local and Base Sepolia runtime bytecode are both 22,427 bytes and have the same hash after normalizing compiler-declared immutable slots. Third-party explorer source verification is not complete.
+- **Source and bytecode evidence:** Blockscout publishes the standard-JSON V2 source and constructor arguments, reports verified/partial matching and unchanged bytecode, but not full verification. Local and Base Sepolia runtime bytecode are both 22,427 bytes and have the same hash after normalizing compiler-declared immutable slots.
 - **Deep public verifier:** all 26 transactions are reconstructed in chain order with caller, target, method, settlement ID, and event checks; the sole failed release is decoded as `BeneficiarySanctioned`, then balances, allowance, escrow, clearances, disclosure, and solvency reconcile.
 - **Bounded AI trace:** a real read-only Codex run using the CLI-reported `gpt-5.6-sol` model produced a schema-valid explanation in 27.432 seconds, reported 20,878 tokens, and performed no signing, broadcast, authorization, or state change. The CLI did not report metered API cost, so no cost is claimed.
 
@@ -70,7 +70,7 @@ Recorded outputs are retained under `experiments/runs/`, including final regress
 - **Technical implementation:** payer authorization, replay protection, role and credential epochs, funded-start challenge timing, exact-balance escrow, two terminal public paths, and reconciled accounting.
 - **Innovation:** AI is deliberately useful but non-authoritative; the most important demo is a real on-chain failure and recovery rather than only a successful transfer.
 - **Impact:** the first target user is a regional treasury lead moving from invoice to payer signature, separated approval, risk change, refusal/refund, and reconciliation. A future pilot would measure approval time, policy-triggered blocks, recovery time, reconciliation exceptions, and manual interventions; no pilot, adoption, or savings result is claimed yet.
-- **Demo quality:** a public static control room replays the committed manifest and links directly to the deployment, clean release, status-0 failure, refund, and disclosure evidence.
+- **Demo quality:** a public control room replays the committed manifest, can freshly re-read the core Base Sepolia proof, and links directly to the deployment, clean release, status-0 failure, refund, and disclosure evidence.
 - **Track relevance:** the prototype explores auditable payment infrastructure and agent orchestration without granting a model unilateral control of funds.
 
 ## Release bundle contents

@@ -16,10 +16,10 @@ Most payment-agent demos showcase a successful transfer. Verifiable Treasury Age
 
 | Criterion | Weight | Current evidence |
 | --- | ---: | --- |
-| Technical implementation | 30% | Hardened Solidity V2, 37 repository-wide checks, 64 deterministic paths, 99.14% V2 line coverage, Slither triage, 22,427-byte deployable runtime, 26 deeply verified public receipts |
+| Technical implementation | 30% | Hardened Solidity V2, 40 repository-wide checks, 64 deterministic paths, 99.14% V2 line coverage, Slither triage, 22,427-byte deployable runtime, 26 deeply verified public receipts, browser-side live RPC recheck |
 | Impact | 25% | Regional-treasury workflow from invoice to signature, separated approval, risk-change refusal/refund, and reconciliation; explicit future pilot KPIs without claiming adoption or savings |
 | Innovation | 20% | Real schema-constrained Codex explanation without signing authority; domain-bound disclosure; revoke/regrant-safe roles; on-chain negative-control receipt |
-| Presentation/demo | 15% | Hosted evidence control room, 114.9-second narrated walkthrough, two terminal outcomes, public explorer links, screenshots, and four-page evidence brief |
+| Presentation/demo | 15% | Hosted evidence control room, 114.4-second narrated walkthrough, two terminal outcomes, public explorer links, screenshots, and four-page evidence brief |
 | Track relevance | 10% | Treasury settlement controls and payment infrastructure operating boundary on Base Sepolia |
 
 ## Canonical V2 evidence

@@ -62,7 +62,7 @@ narrations=(
   "The clean path reaches a separate beneficiary address. The blocked path ends cancelled; that beneficiary receives zero. Escrow and total escrowed return to zero, every balance reconciles, and the contract remains solvent."
   "The planner emits a deterministic E I P seven twelve payload. A real, read-only Codex trace confirms the schema without signing, broadcasting, or changing state. Only the payer signs. Chain, contract, parties, amount, quote, nonce, commitment, and clearance are bound."
   "Role epochs prevent revoked operators, approvers, or stale votes from reviving. Quote expiry, capacity, two approvals, payer and beneficiary risk, exact balance deltas, and challenge windows are contract enforced. Raw invoices stay off chain behind a salted, domain separated commitment."
-  "The bundle contains twenty-six public receipts: twenty-five successes and one expected status-zero rejection. Thirty-seven checks pass; sixty-four deterministic paths were generated. A read-only verifier confirms disclosure, final balances, zero escrow, solvency, fees, and observed confirmation timing."
+  "The bundle contains twenty-six public receipts: twenty-five successes and one expected status-zero rejection. Forty checks pass; sixty-four deterministic paths were generated. The browser can freshly re-read receipt status, terminal states, balances, zero escrow, and solvency without connecting a wallet."
   "This is testnet proof, not production settlement. m U S D is valueless, not U S D C. Singapore to China and sanctions inputs are synthetic. There is no real fiat, foreign exchange, bridge, off-ramp, certified K Y C feed, or customer data. A I explains and orchestrates; it never signs. The contract alone moves value."
 )
 
