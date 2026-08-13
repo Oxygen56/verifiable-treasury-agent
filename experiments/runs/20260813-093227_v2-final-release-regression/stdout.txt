@@ -1,0 +1,50 @@
+Nothing to compile
+{"contract":"VerifiableTreasuryV2","deployedBytes":22427,"eip170Limit":24576,"headroomBytes":2149,"withinLimit":true}
+
+  VerifiableTreasury
+    ✔ executes a low-value settlement and verifies selective disclosure (901ms)
+    ✔ requires two distinct approvals above the high-value threshold (81ms)
+    ✔ blocks sanctioned beneficiaries without mutating settlement state
+    ✔ cancels a funded settlement and refunds the payer before release (42ms)
+    ✔ rolls an expired funded settlement back and reconciles balances
+    ✔ reverts atomically when the daily limit would be exceeded
+    ✔ invalidates release when compliance changes the attested policy digest
+
+  VerifiableTreasuryV2 stateful invariants
+    ✔ preserves solvency, exact conservation, single terminal outcome, and nonce monotonicity across 64 generated paths (1490ms)
+
+  VerifiableTreasuryV2
+    ✔ relays a payer-signed, corridor- and quote-bound intent without giving AI authority (71ms)
+    ✔ rejects AI or relayer attempts to tamper with the signed beneficiary, amount, route or quote
+    ✔ prevents replay, duplicate client orders and duplicate invoice payments
+    ✔ lets a payer invalidate leaked signed intents with a strictly monotonic nonce
+    ✔ enforces independent high-value approval and rejects payer/operator/compliance conflicts
+    ✔ starts the challenge window at funding, not proposal, and releases to a distinct beneficiary
+    ✔ blocks release after a sanctions change and preserves revocable escrow
+    ✔ reverts daily-limit failures atomically
+    ✔ rejects fee-on-transfer assets so the ledger never promises more than escrow received (61ms)
+    ✔ rolls expired escrow back permissionlessly and reconciles exactly
+    ✔ invalidates credentials issued by a compliance identity after that identity is revoked
+    ✔ blocks a sanctioned payer at release and preserves a full refund path
+    ✔ does not revive an old approval after revoke and re-grant, then supports a fresh round
+    ✔ requires two distinct compliance identities to clear a sanctions flag
+    ✔ rejects a stale first compliance vote after revoke/re-grant and rejects beneficiary self-clear
+    ✔ invalidates a pending clear vote when new screening evidence is re-attested
+    ✔ fails closed when a clean risk attestation becomes stale and recovers after re-attestation
+    ✔ supports precise clearance revocation and invalidates old payer-risk credentials after a sanctions cycle
+    ✔ enforces route, amount and quote expiry from the signed clearance and quote
+    ✔ scopes invoice replay protection by payer so copied mempool commitments cannot block the victim
+    ✔ binds disclosure to the chain, contract, parties, amount, route, and client order (44ms)
+    ✔ reconciles three concurrently funded settlements across release, payer cancel, and expiry rollback (53ms)
+    ✔ enforces cumulative lifetime allowance on a reusable payer-bound clearance
+
+  SettlementIntent orchestrator V2
+    ✔ matches the contract's domain-separated commitment and EIP-712 digest exactly (38ms)
+    ✔ is deterministic across object-key ordering and excludes private preimages from output
+    ✔ does not expose an invoice-only digest that links the same invoice across salts
+    ✔ rejects same-party, invalid amount, route, quote, validity, order, and authorization material
+    ✔ CLI emits the same unsigned plan without requiring a network connection (376ms)
+    ✔ contains no signer, wallet, provider, contract call, or transaction transport primitive
+
+
+  37 passing (4s)

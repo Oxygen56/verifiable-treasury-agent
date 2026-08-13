@@ -1,0 +1,34 @@
+{
+  "run_id": "20260813-094543_v2-codex-explanation-boundary-final",
+  "name": "v2-codex-explanation-boundary-final",
+  "command": [
+    "codex",
+    "exec",
+    "--ephemeral",
+    "--ignore-user-config",
+    "-s",
+    "read-only",
+    "--output-schema",
+    "tmp/codex-explanation-schema.json",
+    "-o",
+    "tmp/codex-explanation-output-final.json",
+    "-"
+  ],
+  "returncode": 0,
+  "duration_sec": 27.432,
+  "metric": "schema_valid",
+  "score": 1,
+  "direction": "maximize",
+  "tags": "ai,orchestrator,disclosure",
+  "notes": "Real Codex explanation-only run over deterministic synthetic plan; no tools, signing, broadcast, or state changes.",
+  "created_at": "2026-08-13T09:46:10",
+  "git": {
+    "commit": "7fc3553d4989e9626ebac03b36b20faa2a85e763",
+    "branch": "main",
+    "workingTreeSnapshot": "omitted from public evidence"
+  },
+  "publicArtifactSanitization": [
+    "Unrelated working-tree inventory omitted from the public evidence record.",
+    "User-home paths replaced with <USER_HOME>; dotenv loader banners removed; decorative separator lines normalized."
+  ]
+}

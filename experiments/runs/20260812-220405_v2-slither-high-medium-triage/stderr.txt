@@ -1,0 +1,1 @@
+INFO:Slither:contracts/VerifiableTreasuryV2.sol analyzed (26 contracts with 63 detectors), 0 result(s) found

@@ -22,4 +22,4 @@ constraints:
   compute: "No public limit found; local reproducible build"
   environment: "local"
 notes:
-  current_strategy: "Track 1: contract-enforced cross-border treasury and stablecoin settlement agent; AI only explains and orchestrates."
+  current_strategy: "Track 1: contract-enforced treasury settlement controls; AI only explains and orchestrates. Public proof uses valueless mUSD and a synthetic SG-CN scenario, not real cross-border settlement."
