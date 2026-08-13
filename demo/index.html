@@ -3,69 +3,250 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="Verifiable Treasury Agent — contract-enforced cross-border stablecoin settlement controls." />
-  <title>Verifiable Treasury Agent</title>
+  <meta name="description" content="A judge-facing control room for a synthetic cross-border treasury settlement scenario: AI plans, separate role wallets authorize, contracts enforce." />
+  <meta name="theme-color" content="#0a1d18" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Verifiable Treasury Agent V2" />
+  <meta property="og:description" content="The payment that wins trust is the one that refuses to move: public Base Sepolia failure, refund, and reconciliation evidence." />
+  <meta property="og:image" content="https://oxygen56.github.io/verifiable-treasury-agent/demo/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Verifiable Treasury Agent V2" />
+  <meta name="twitter:description" content="Public Base Sepolia proof of a settlement that fails closed, refunds, and reconciles." />
+  <meta name="twitter:image" content="https://oxygen56.github.io/verifiable-treasury-agent/demo/og-image.png" />
+  <title>Verifiable Treasury Agent · Judge Control Room</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <nav><a class="brand" href="#top">VTA<span>→</span></a><div><a href="#controls">Controls</a><a href="#evidence">Evidence</a><a id="repo-link" href="#">Source</a></div></nav>
+  <nav class="topbar" aria-label="Primary navigation">
+    <a class="brand" href="#top" aria-label="Verifiable Treasury Agent home">VTA<span>→</span></a>
+    <div class="nav-links">
+      <a href="#control-room">Control room</a>
+      <a href="#trust-boundary">Trust boundary</a>
+      <a href="#evidence">Evidence</a>
+      <a id="repo-link" href="https://github.com/Oxygen56/verifiable-treasury-agent" target="_blank" rel="noopener">Source ↗</a>
+    </div>
+  </nav>
+
   <main id="top">
     <section class="hero">
-      <p class="eyebrow">NTU CCTF × SNZ INNOVATEX · TRACK 1</p>
-      <h1>Move stablecoins.<br><em>Prove every control.</em></h1>
-      <p class="lead">An AI can explain and orchestrate. Only an auditable contract can approve, escrow, cancel, roll back, or release a cross-border treasury settlement.</p>
-      <div class="hero-actions"><button id="run-demo">Run control-room demo</button><a href="#evidence">Inspect evidence ↓</a></div>
-      <div class="boundary"><strong>Trust boundary</strong><span>AI has no privileged key and no bypass path.</span></div>
+      <div class="hero-copy">
+        <div class="kicker-row">
+          <p class="eyebrow">NTU CCTF × SNZ INNOVATEX · TRACK 1</p>
+          <span class="status-chip verified">V2 BASE SEPOLIA · VERIFIED</span>
+        </div>
+        <h1>The payment that wins trust is the one that <em>refuses to move.</em></h1>
+        <p class="lead">A Singapore treasury wants to settle a supplier invoice in China. AI prepares the intent. Separate payer and approver role wallets authorize. The contract—not the model—decides whether funds can move.</p>
+        <div class="hero-actions">
+          <button class="primary-button" id="run-demo">Replay the blocked release</button>
+          <a class="text-link" href="#evidence">Inspect what is verified today ↓</a>
+        </div>
+        <div class="scope-strip" aria-label="Demo scope">
+          <div><b>mUSD</b><span>project demo asset · no financial value · <a id="token-address" href="#" target="_blank" rel="noopener">loading token</a></span></div>
+          <div><b>SG → CN</b><span>synthetic business scenario · not proof of geography</span></div>
+          <div><b>Public evidence replay</b><span>read-only receipts · no wallet or broadcast</span></div>
+        </div>
+      </div>
+
+      <aside class="case-card" aria-label="Settlement case summary">
+        <div class="case-topline"><span>CASE · INV-0042</span><span class="case-state">RISK UPDATED</span></div>
+        <div class="case-amount">15,000.00 <small>mUSD</small></div>
+        <p class="case-corridor">Synthetic supplier settlement · Singapore → China</p>
+        <p class="contract-address">V2 treasury · <a id="case-treasury-link" href="#" target="_blank" rel="noopener">loading address</a></p>
+        <dl class="identity-grid">
+          <div><dt>Payer</dt><dd>SG Treasury<a id="payer-address" class="address-link" href="#" target="_blank" rel="noopener">loading public address</a></dd></div>
+          <div><dt>Beneficiary</dt><dd>CN Supplier<a id="beneficiary-address" class="address-link" href="#" target="_blank" rel="noopener">loading distinct address</a></dd></div>
+        </dl>
+        <div class="separation-proof"><span>≠</span><p><b>Separate role addresses verified</b><br />The V2 public manifest records different payer and beneficiary wallet addresses.</p></div>
+      </aside>
     </section>
 
-    <section id="controls" class="control-room">
-      <div class="section-head"><p>LIVE SIMULATION</p><h2>A successful payment is only half the demo.</h2></div>
-      <div class="grid">
-        <div class="panel flow-panel">
-          <div class="panel-title"><span>SETTLEMENT #0042</span><span id="state-pill" class="pill">READY</span></div>
-          <div class="amount"><span>15,000.00</span><small>test USDC · SG → CN</small></div>
-          <ol id="timeline">
-            <li data-step="0"><b>Policy attested</b><span>Digest + expiry, no raw KYC</span></li>
-            <li data-step="1"><b>Two approvals</b><span>Distinct finance signers required</span></li>
-            <li data-step="2"><b>Escrow funded</b><span>Daily limit checked atomically</span></li>
-            <li data-step="3"><b>Challenge window</b><span>Cancellation still refunds payer</span></li>
-            <li data-step="4"><b>Released + reconciled</b><span>Escrow 0 · beneficiary 15,000</span></li>
+    <section class="moment" aria-label="Memorable product promise">
+      <span>THE JUDGE MOMENT</span>
+      <p>A synthetic sanctions flag changes after funding. Release is blocked before transfer. Escrow is then cancelled and the payer is made whole.</p>
+    </section>
+
+    <section id="control-room" class="control-room">
+      <div class="section-heading">
+        <div><p class="eyebrow">JUDGE CONTROL ROOM</p><h2>One event. Every decision exposed.</h2></div>
+        <p class="section-note"><b>Public evidence replay</b> · The interface reads the V2 receipt manifest. It does not call a wallet or broadcast a new transaction.</p>
+      </div>
+
+      <div class="scenario-tabs" role="tablist" aria-label="Settlement scenarios">
+        <button class="scenario-tab active" role="tab" aria-selected="true" data-scenario="blocked">Synthetic risk update → refund</button>
+        <button class="scenario-tab" role="tab" aria-selected="false" data-scenario="clean">Clean policy → release</button>
+        <button class="scenario-tab" role="tab" aria-selected="false" data-scenario="disclosure">Commitment disclosure</button>
+      </div>
+
+      <div class="control-grid">
+        <article class="console-card intent-card">
+          <div class="card-header"><span>01 · AI PLAN</span><span class="status-chip safe">NO SIGNING KEY</span></div>
+          <div class="agent-message">
+            <span class="agent-mark">AI</span>
+            <p id="agent-copy">“Invoice INV-0042 requires two separate approver wallets. I prepared typed data for payer review. I cannot sign or broadcast it.”</p>
+          </div>
+          <div class="intent-json" aria-label="Illustrative structured intent">
+            <div><span>corridor</span><b>SG → CN · synthetic</b></div>
+            <div><span>asset</span><b>mUSD · demo only</b></div>
+            <div><span>amount</span><b>15,000.00</b></div>
+            <div><span>authority</span><b>payer + approver wallets + contract</b></div>
+          </div>
+          <div class="signing-envelope">
+            <span>EIP-712 TARGET ENVELOPE</span>
+            <p>Readable typed intent binds chain, contract, payer, beneficiary, asset, amount, policy digest, commitment, and nonce.</p>
+            <small><a id="intent-proof-link" href="../evidence/base-sepolia-v2.json" target="_blank" rel="noopener">V2 payer-signed intent accepted by a relayer on Base Sepolia ↗</a></small>
+          </div>
+        </article>
+
+        <article class="console-card state-card">
+          <div class="card-header"><span>02 · ENFORCEMENT TRACE</span><span id="state-pill" class="state-pill">FUNDED</span></div>
+          <ol id="timeline" class="timeline">
+            <li data-step="0"><i>1</i><div><b>Unsigned intent prepared</b><span>AI explains; no privileged key or broadcast path</span></div><em>PLAN</em></li>
+            <li data-step="1"><i>2</i><div><b>Payer authorization</b><span>EIP-712 payer-wallet signature</span></div><em>SIGNED</em></li>
+            <li data-step="2"><i>3</i><div><b>Separate approval wallets</b><span>Approver role wallet A + wallet B</span></div><em>2 / 2</em></li>
+            <li data-step="3"><i>4</i><div><b>Escrow funded · T0</b><span>Daily limit checked; challenge window starts now</span></div><em>15K</em></li>
+            <li data-step="4"><i>5</i><div><b>Synthetic sanctions flag updated</b><span>Release rechecks the current policy state</span></div><em>RISK</em></li>
+            <li data-step="5"><i>6</i><div><b>Release blocked; payer refunded</b><span>No beneficiary transfer; escrow returns to zero</span></div><em>SAFE</em></li>
           </ol>
-        </div>
-        <div class="panel test-panel">
-          <div class="panel-title"><span>NEGATIVE CONTROLS</span><span class="live-dot">7 TESTS</span></div>
-          <button class="scenario" data-result="blocked"><span>Sanction status changes</span><b>BLOCK RELEASE</b></button>
-          <button class="scenario" data-result="blocked"><span>Daily limit exceeded</span><b>ROLL BACK</b></button>
-          <button class="scenario" data-result="refunded"><span>Bank details disputed</span><b>REFUND ESCROW</b></button>
-          <button class="scenario" data-result="refunded"><span>Settlement expires</span><b>REFUND ESCROW</b></button>
-          <div id="scenario-output">Select a failure path. The UI does not decide the outcome; the contract does.</div>
-        </div>
+        </article>
+
+        <article class="console-card outcome-card">
+          <div class="card-header"><span>03 · VERIFIABLE OUTCOME</span><span id="outcome-chip" class="status-chip danger">BLOCKED</span></div>
+          <div class="decision-box" id="decision-box">
+            <span id="decision-label">RELEASE DECISION</span>
+            <strong id="decision-title">DO NOT TRANSFER</strong>
+            <p id="decision-reason">The beneficiary’s policy status changed during the funded challenge window.</p>
+          </div>
+          <div class="balance-ledger">
+            <div><span>Payer</span><b id="payer-balance">15,000 restored</b><small id="payer-caption">after cancellation</small></div>
+            <div><span>Escrow</span><b id="escrow-balance">0</b><small id="escrow-caption">fully reconciled</small></div>
+            <div><span>Beneficiary</span><b id="beneficiary-balance">0</b><small id="beneficiary-caption">release blocked</small></div>
+          </div>
+          <div class="receipt-placeholder verified-receipts">
+            <span>V2 BASE SEPOLIA RECEIPTS</span>
+            <b id="receipt-status">LOADING VERIFIED RECEIPTS</b>
+            <p id="receipt-copy">The blocked release must resolve with status 0; the refund must resolve with status 1.</p>
+            <div id="receipt-links" class="receipt-links" aria-live="polite"></div>
+          </div>
+        </article>
+      </div>
+
+      <div class="replay-bar">
+        <p><b id="replay-title">Blocked-release replay ready.</b><span id="replay-copy"> Six steps tell the story; none are presented as a live transaction.</span></p>
+        <button class="secondary-button" id="replay-button">Replay six decisions</button>
       </div>
     </section>
 
-    <section class="principles">
-      <article><span>01</span><h3>Policy-bound</h3><p>Every proposal pins an exact compliance digest and expiry. A changed or stale policy halts release.</p></article>
-      <article><span>02</span><h3>Private by minimization</h3><p>Salted commitments go on-chain; invoice, identity, and screening records stay off-chain.</p></article>
-      <article><span>03</span><h3>Precisely revocable</h3><p>Funds can be refunded before release. We never pretend a finalized transfer can be magically reversed.</p></article>
+    <section id="trust-boundary" class="trust-boundary">
+      <div class="section-heading compact">
+        <div><p class="eyebrow">DETERMINISTIC TRUST BOUNDARY</p><h2>AI prepares. Role wallets authorize. Contracts enforce.</h2></div>
+      </div>
+      <div class="boundary-flow" aria-label="Trust boundary flow">
+        <article><span>01</span><b>AI orchestrator</b><p>Parses a synthetic invoice, explains risk, and prepares unsigned typed data.</p><small>Cannot sign</small></article>
+        <i>→</i>
+        <article><span>02</span><b>Role wallets</b><p>Separate payer and approver addresses authorize the public-testnet transactions.</p><small>EIP-712 · public testnet</small></article>
+        <i>→</i>
+        <article><span>03</span><b>Policy attestor</b><p>Publishes a digest, expiry, and synthetic risk status—not raw KYC records.</p><small>External trust declared</small></article>
+        <i>→</i>
+        <article class="enforcer"><span>04</span><b>Treasury contract</b><p>Checks roles, limits, policy, challenge timing, escrow, release, and refund.</p><small>Only enforcement authority</small></article>
+      </div>
     </section>
 
-    <section id="evidence" class="evidence">
-      <div class="section-head"><p>EVIDENCE, NOT PROMISES</p><h2>Every claim maps to an inspectable artifact.</h2></div>
-      <div class="evidence-grid">
-        <a href="../contracts/VerifiableTreasury.sol"><b>Core contract</b><span>State machine and roles</span></a>
-        <a href="../test/VerifiableTreasury.test.js"><b>Negative controls</b><span>Atomic rollback assertions</span></a>
-        <a href="../evidence/benchmark.json"><b>Measured run</b><span>Gas, latency, balances</span></a>
-        <a id="explorer-link" href="#"><b>Base Sepolia</b><span id="testnet-status">Loading public receipts</span></a>
+    <section class="commitment-section">
+      <div class="commitment-copy">
+        <p class="eyebrow">SELECTIVE DISCLOSURE</p>
+        <h2>Reveal the invoice only when it matters.</h2>
+        <p>Raw invoice and KYC records remain off-chain. V2 domain-separates each commitment and binds it to the chain, treasury contract, payer, beneficiary, amount, corridor digest, client order, invoice bytes, and salt. Changing any bound field must fail disclosure.</p>
+        <code>keccak256(abi.encode(INVOICE_COMMITMENT_DOMAIN, block.chainid, address(this), payer, beneficiary, amount, corridorDigest, clientOrderId, invoiceData, salt)) == invoiceCommitment</code>
+        <small>INVOICE_COMMITMENT_DOMAIN = keccak256("VTA_INVOICE_COMMITMENT_V2"). Hash commitments minimize disclosure; they are not a zero-knowledge proof or secure storage system.</small>
       </div>
-      <div class="metrics">
-        <div><strong id="tx-count">—</strong><span>state-changing transactions</span></div>
-        <div><strong id="gas-total">—</strong><span>gas units in measured path</span></div>
-        <div><strong id="reconciled">—</strong><span>escrow reconciliation</span></div>
+      <div class="disclosure-card">
+        <div class="card-header"><span>DISCLOSURE CHECK</span><span class="status-chip verified">V2 VERIFIED</span></div>
+        <dl>
+          <div><dt>Invoice bytes</dt><dd id="disclosure-invoice">loading public synthetic disclosure</dd></div>
+          <div><dt>Commitment</dt><dd id="disclosure-commitment">loading commitment</dd></div>
+          <div><dt>Amount</dt><dd>15,000 mUSD</dd></div>
+          <div><dt>Public salt</dt><dd id="disclosure-salt">loading synthetic salt</dd></div>
+        </dl>
+        <div class="disclosure-actions">
+          <button data-disclosure="match">Show public verified match</button>
+          <button data-disclosure="mismatch">Show tamper rejection</button>
+        </div>
+        <div id="disclosure-result" class="disclosure-result neutral"><b>LOADING</b><span>Reading the public V2 evidence manifest.</span></div>
       </div>
-      <p class="fineprint">The public run uses project-deployed Mock Test Dollar (mUSD), not USDC; it has no financial value. The sanctions digest is a synthetic demo attestation, not a certified screening service. Public-testnet execution is not production approval.</p>
+    </section>
+
+    <section class="judge-answers">
+      <div class="section-heading compact">
+        <div><p class="eyebrow">JUDGE QUESTIONS · ANSWERED FIRST</p><h2>What this is—and what it is not.</h2></div>
+      </div>
+      <div class="answer-grid">
+        <article><span>WHY NOT ORDINARY ESCROW?</span><p>Because approval addresses, policy freshness, risk-status changes, challenge timing, cancellation, and reconciliation are separately inspectable.</p></article>
+        <article><span>WHERE IS THE AI?</span><p>A real read-only Codex run explained the deterministic plan into a strict schema. It returned UNSIGNED_REVIEW_REQUIRED; giving it a privileged key would violate the product’s core safety claim.</p></article>
+        <article><span>WHAT IS VERIFIED TODAY?</span><p>V2 publicly proves separate role addresses, payer-wallet authorization, two approver-wallet transactions, funded escrow, status-0 policy blocking, full refund, and clean release.</p></article>
+        <article><span>WHAT REMAINS TO PROVE?</span><p>Production audit, real stablecoin integration, licensed payment operations, real compliance feeds, key custody, fiat, FX, and off-ramp execution.</p></article>
+      </div>
+    </section>
+
+    <section id="evidence" class="evidence-section">
+      <div class="section-heading on-dark">
+        <div><p class="eyebrow">CLAIM LEDGER</p><h2>Verified evidence and target architecture never share a label.</h2></div>
+        <p class="section-note">V2 public receipts and final balances are loaded from the current public manifest. Only V2 evidence is counted below.</p>
+      </div>
+      <div class="evidence-cards">
+        <article class="evidence-card verified-card">
+          <div class="card-header"><span>V2 · PUBLIC TESTNET</span><span class="status-chip verified">VERIFIED</span></div>
+          <strong id="v2-tx-count">26</strong><p>public transaction records, including one expected status-0 block</p>
+          <ul>
+            <li>Valueless project-deployed mUSD, not USDC</li>
+            <li>Separate payer, clean-beneficiary, and blocked-beneficiary addresses</li>
+            <li>Payer-wallet signature plus two separate approver-wallet transactions</li>
+            <li>Synthetic risk update → status 0 → full refund</li>
+            <li>9,303,697 gas · 0.00005595 test ETH · 736 s public block span</li>
+          </ul>
+          <a id="treasury-link" href="https://sepolia.basescan.org/address/0x7B92aB3D8BA17cF5f28C60E5c1FC326862dD6395" target="_blank" rel="noopener">Inspect V2 treasury contract ↗</a>
+        </article>
+
+        <article class="evidence-card public-card">
+          <div class="card-header"><span>V2 · TWO TERMINAL OUTCOMES</span><span class="status-chip verified">RECONCILED</span></div>
+          <strong id="v2-outcomes">2</strong><p>public scenarios: clean release and blocked-then-refunded</p>
+          <ul>
+            <li>Clean beneficiary: <b id="clean-final-card">15,000 mUSD</b></li>
+            <li>Blocked beneficiary: <b id="blocked-final-card">0 mUSD</b></li>
+            <li>Escrow: <b id="escrow-final-card">0 mUSD</b></li>
+            <li>Solvent and invoice disclosure verified</li>
+          </ul>
+          <a id="manifest-link" href="../evidence/base-sepolia-v2.json" target="_blank" rel="noopener">Inspect complete V2 manifest ↗</a>
+        </article>
+
+        <article class="evidence-card local-card">
+          <div class="card-header"><span>V2 · LOCAL REGRESSION</span><span class="status-chip safe">VERIFIED LOCALLY</span></div>
+          <strong>30</strong><p>V2 contract, invariant, and orchestrator tests</p>
+          <ul>
+            <li>Exact EIP-712 payer authorization and anti-replay</li>
+            <li>Separate role wallets and approval-address conflicts</li>
+            <li>Funded-start window, synthetic-risk block, and refunds</li>
+            <li>64 generated state paths plus deterministic planner</li>
+            <li>Real Codex explanation run · schema-valid · no signing or broadcast</li>
+          </ul>
+          <a href="../evidence/codex-explanation-v2.json" target="_blank" rel="noopener">Inspect the Codex boundary trace ↗</a>
+        </article>
+      </div>
+
+      <div class="metrics" aria-label="V2 public evidence metrics">
+        <div><span>EXPECTED POLICY BLOCK</span><strong id="blocked-status">STATUS 0</strong><small>on-chain failed release · state and escrow preserved</small></div>
+        <div><span>V2 RECONCILIATION</span><strong id="v2-reconciled">PASSED</strong><small id="v2-balance-summary">payer 15K · clean beneficiary 15K · blocked beneficiary 0</small></div>
+        <div><span>FINAL ESCROW</span><strong id="v2-escrow">0 mUSD</strong><small>totalEscrowed 0 · solvent true</small></div>
+      </div>
+      <p class="fineprint">Observed confirmation latency median: 7.499 seconds for the nine public transactions whose client-side timing was retained; this is not a 26-transaction latency sample. This is public Base Sepolia proof only, not production or financial settlement. mUSD has no financial value and is not Circle USDC. SG → CN and sanctions inputs are synthetic scenarios; there is no fiat, FX, off-ramp, KYC provider, certified screening feed, regulatory approval, or real-funds safety claim. Ephemeral keys are test-only, not production key management. Revocability ends at release.</p>
     </section>
   </main>
-  <footer><span>VERIFIABLE TREASURY AGENT · 2026</span><span>AI explains. Contracts enforce. Humans remain accountable.</span></footer>
+
+  <footer>
+    <span>VERIFIABLE TREASURY AGENT · 2026</span>
+    <span>AI explains. Role wallets authorize. Contracts enforce.</span>
+  </footer>
   <script src="app.js"></script>
 </body>
 </html>

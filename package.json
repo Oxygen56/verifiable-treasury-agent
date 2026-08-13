@@ -2,23 +2,51 @@
   "name": "verifiable-treasury-agent",
   "version": "1.0.0",
   "private": true,
-  "description": "Auditable cross-border treasury and stablecoin settlement state machine for NTU InnovateX 2026",
+  "description": "Auditable V2 public-testnet treasury settlement control plane for NTU InnovateX 2026",
   "license": "Apache-2.0",
+  "packageManager": "pnpm@9.15.4",
+  "engines": {
+    "node": ">=20 <21",
+    "pnpm": "9.15.4"
+  },
+  "pnpm": {
+    "overrides": {
+      "adm-zip": "0.6.0",
+      "bn.js": "4.12.3",
+      "cookie": "0.7.2",
+      "diff": "8.0.3",
+      "lodash": "4.18.1",
+      "serialize-javascript": "7.0.5",
+      "tmp": "0.2.7",
+      "undici": "6.28.0",
+      "uuid": "11.1.1"
+    },
+    "onlyBuiltDependencies": [
+      "keccak",
+      "secp256k1"
+    ]
+  },
   "scripts": {
     "compile": "hardhat compile",
     "test": "hardhat test",
-    "benchmark": "hardhat run scripts/benchmark.js",
-    "deploy:base-sepolia": "hardhat run scripts/deploy-base-sepolia.js --network baseSepolia",
-    "demo:base-sepolia": "hardhat run scripts/full-demo-base-sepolia.js --network baseSepolia",
-    "demo:base-sepolia:recover": "hardhat run scripts/recover-base-sepolia-demo.js --network baseSepolia",
-    "demo": "python3 -m http.server 4173 -d demo",
-    "check": "pnpm compile && pnpm test"
+    "coverage": "hardhat coverage",
+    "check:size": "node scripts/check-contract-size.js",
+    "plan:v2": "node scripts/plan-settlement-v2.js evidence/sample-invoice-v2.json",
+    "verify:v2:bytecode": "node scripts/verify-deployed-bytecode.js",
+    "verify:v2:evidence": "node scripts/verify-base-sepolia-v2-evidence.js",
+    "demo:v2:base-sepolia": "hardhat run scripts/full-demo-v2-base-sepolia.js --network baseSepolia",
+    "demo:v2:base-sepolia:recover": "hardhat run scripts/recover-v2-base-sepolia-demo.js --network baseSepolia",
+    "demo": "python3 -m http.server 4173",
+    "package:v2": "node scripts/package-v2-release.js",
+    "audit:release": "pnpm audit --audit-level high",
+    "check": "pnpm compile && pnpm check:size && pnpm test"
   },
   "devDependencies": {
-    "@nomicfoundation/hardhat-toolbox": "5.0.0",
-    "@openzeppelin/contracts": "5.2.0",
-    "dotenv": "16.4.7",
+    "@nomicfoundation/hardhat-toolbox": "6.1.2",
+    "@openzeppelin/contracts": "5.6.1",
+    "dotenv": "17.4.2",
     "ethers": "6.17.0",
-    "hardhat": "2.22.19"
+    "hardhat": "2.29.0",
+    "solidity-coverage": "0.8.17"
   }
 }

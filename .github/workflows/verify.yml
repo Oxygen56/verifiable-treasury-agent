@@ -17,10 +17,14 @@ jobs:
           node-version: 20
           cache: pnpm
       - run: pnpm install --frozen-lockfile
-      - run: pnpm compile
-      - run: pnpm test
-      - run: pnpm benchmark
+      - run: pnpm check
+      - run: pnpm audit:release
+      - name: Generate deterministic unsigned V2 plan
+        run: |
+          pnpm --silent plan:v2 > unsigned-settlement-plan-v2.json
+          node -e 'JSON.parse(require("node:fs").readFileSync("unsigned-settlement-plan-v2.json", "utf8"))'
       - uses: actions/upload-artifact@v4
         with:
-          name: benchmark-evidence
-          path: evidence/benchmark.json
+          name: v2-unsigned-plan-evidence
+          path: unsigned-settlement-plan-v2.json
+          if-no-files-found: error

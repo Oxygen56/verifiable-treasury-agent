@@ -1,0 +1,15 @@
+{
+  "checkedAt": "2026-08-12T13:58:53.034Z",
+  "network": "Base Sepolia",
+  "chainId": 84532,
+  "address": "0x7B92aB3D8BA17cF5f28C60E5c1FC326862dD6395",
+  "compiler": "0.8.28+commit.7893614a",
+  "buildInfo": "artifacts/build-info/4bd0ed32a7def59c35d67f8b3da6eae4.json",
+  "localRuntimeBytes": 22427,
+  "onchainRuntimeBytes": 22427,
+  "immutableReferenceCount": 21,
+  "normalizedLocalHash": "0x6770be5de70fccc0533489dca61997d298a7de1e8ad522eb74bdc942f242f3a5",
+  "normalizedOnchainHash": "0x6770be5de70fccc0533489dca61997d298a7de1e8ad522eb74bdc942f242f3a5",
+  "exactAfterImmutableNormalization": true,
+  "boundary": "Independent local compiler-to-onchain bytecode match after zeroing compiler-declared immutable slots; not a third-party explorer verification."
+}

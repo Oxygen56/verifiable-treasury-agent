@@ -1,0 +1,4 @@
+$ pnpm compile && pnpm check:size && pnpm test
+$ hardhat compile
+$ node scripts/check-contract-size.js
+$ hardhat test

@@ -2,10 +2,13 @@ node_modules/
 artifacts/
 cache/
 coverage/
+coverage.json
 .env
+.env.*
+evidence/private/
 .DS_Store
 typechain-types/
 *.log
-evidence/private/
 tmp/
+.venv-*/
 buidl/package/

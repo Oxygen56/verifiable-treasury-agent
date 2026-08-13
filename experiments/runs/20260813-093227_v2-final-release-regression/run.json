@@ -1,0 +1,25 @@
+{
+  "run_id": "20260813-093227_v2-final-release-regression",
+  "name": "v2-final-release-regression",
+  "command": [
+    "pnpm",
+    "check"
+  ],
+  "returncode": 0,
+  "duration_sec": 8.559,
+  "metric": "tests_passing",
+  "score": 37,
+  "direction": "maximize",
+  "tags": "release,v2,contracts,orchestrator,demo",
+  "notes": "Final source regression after planner defaults, demo path, evidence metrics and publication materials",
+  "created_at": "2026-08-13T09:32:35",
+  "git": {
+    "commit": "7fc3553d4989e9626ebac03b36b20faa2a85e763",
+    "branch": "main",
+    "workingTreeSnapshot": "omitted from public evidence"
+  },
+  "publicArtifactSanitization": [
+    "Unrelated working-tree inventory omitted from the public evidence record.",
+    "User-home paths replaced with <USER_HOME>; dotenv loader banners removed; decorative separator lines normalized."
+  ]
+}

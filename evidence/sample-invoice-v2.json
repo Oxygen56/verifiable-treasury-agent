@@ -1,0 +1,56 @@
+{
+  "schema": "vta.synthetic-invoice.v2",
+  "synthetic": true,
+  "invoiceData": {
+    "currency": "mUSD",
+    "description": "Synthetic component procurement for a hackathon control demonstration",
+    "invoiceId": "INV-SYNTHETIC-8842",
+    "issuedAt": "2026-08-12T10:00:00Z",
+    "payerEntity": "Meridian Treasury Pte Ltd (synthetic)",
+    "supplierEntity": "Pearl River Components Ltd (synthetic)"
+  },
+  "settlement": {
+    "payer": "0x1111111111111111111111111111111111111111",
+    "beneficiary": "0x2222222222222222222222222222222222222222",
+    "amount": "15000.00",
+    "tokenDecimals": 6,
+    "expiresAt": "2026-08-12T17:30:00Z",
+    "clientOrderId": "8842",
+    "nonce": "0"
+  },
+  "planning": {
+    "asOf": "2026-08-12T12:00:00Z",
+    "chainId": "84532",
+    "network": "base-sepolia",
+    "minimumChallengeWindowSeconds": "3600",
+    "verifyingContract": "0x7B92aB3D8BA17cF5f28C60E5c1FC326862dD6395"
+  },
+  "route": {
+    "originCountry": "SG",
+    "destinationCountry": "CN",
+    "settlementAsset": "mUSD",
+    "network": "base-sepolia",
+    "chainId": "84532",
+    "deliveryMode": "wallet-only testnet scenario; no fiat off-ramp claim"
+  },
+  "quote": {
+    "quoteId": "QUOTE-SYNTHETIC-20260812-01",
+    "provider": "synthetic deterministic fixture",
+    "asset": "mUSD",
+    "inputAmount": "15000.00",
+    "outputAmount": "15000.00",
+    "feeAmount": "0.00",
+    "feeBps": "0",
+    "issuedAt": "2026-08-12T11:55:00Z",
+    "validUntil": "2026-08-12T17:00:00Z"
+  },
+  "policy": {
+    "clearanceId": "0x390cbf97cc44b89a2ddf29fd97841cf296aba1e6ce6c0e4813ff0f2a73e1f578",
+    "digest": "0x5299792e4b1abf0a2ec59984f82bc309c5aae7915c9dd898083937d9617cf695",
+    "validUntil": "2026-08-14T12:00:00Z",
+    "sanctioned": false,
+    "sourceType": "synthetic",
+    "sourceNote": "Synthetic clearance fixture; not an on-chain clearance or certified sanctions-screening result"
+  },
+  "commitmentSalt": "0x22e966f9807f25d057430e2be40f50e1437e626bed90fcf03410ab11be40b250"
+}

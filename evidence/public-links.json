@@ -2,6 +2,10 @@
   "repository": "https://github.com/Oxygen56/verifiable-treasury-agent",
   "demo": "https://oxygen56.github.io/verifiable-treasury-agent/",
   "ci": "https://github.com/Oxygen56/verifiable-treasury-agent/actions/workflows/verify.yml",
-  "baseSepolia": "https://sepolia.basescan.org/address/0x7b46d90981e221e39F93F5bAfDEAaA39eF1ea7f3",
-  "updatedAt": "2026-08-12T10:56:31+08:00"
+  "baseSepolia": "https://sepolia.basescan.org/address/0x7B92aB3D8BA17cF5f28C60E5c1FC326862dD6395",
+  "manifest": "https://github.com/Oxygen56/verifiable-treasury-agent/blob/main/evidence/base-sepolia-v2.json",
+  "evidenceDeck": "https://github.com/Oxygen56/verifiable-treasury-agent/blob/main/output/pdf/verifiable-treasury-agent-evidence.pdf",
+  "walkthroughVideo": "https://github.com/Oxygen56/verifiable-treasury-agent/blob/main/output/video/verifiable-treasury-agent-v2-demo.mp4",
+  "codexTrace": "https://github.com/Oxygen56/verifiable-treasury-agent/blob/main/evidence/codex-explanation-v2.json",
+  "updatedAt": "2026-08-13T10:03:00+08:00"
 }

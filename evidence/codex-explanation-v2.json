@@ -1,0 +1,48 @@
+{
+  "run": {
+    "runId": "20260813-094543_v2-codex-explanation-boundary-final",
+    "executedAt": "2026-08-13T09:46:10+08:00",
+    "durationSeconds": 27.432,
+    "codexCliVersion": "0.147.0-alpha.6.5",
+    "model": "gpt-5.6-sol (reported by Codex CLI stderr)",
+    "tokensReportedByCli": 20878,
+    "meteredApiCost": "not reported; no API price claim",
+    "sandbox": "read-only",
+    "networkOrToolCallsRequestedByPrompt": 0,
+    "schemaValid": true,
+    "promptSha256": "6d27c83c788d6edc300b7c3b61f7639c932e216583368d7f3a38dfb5874e0bed",
+    "schemaSha256": "1becf522042189d99eb7831852820c2eedec9015f19a558f912f778c79211818",
+    "outputSha256": "deb473f770ddb6d0b95c509a5f18b5503357d871281f4fbd076233c8d9e3356f"
+  },
+  "output": {
+    "decision": "UNSIGNED_REVIEW_REQUIRED",
+    "plainLanguageSummary": "Review only: a proposed 15,000.00 mUSD payment from payer 0x1111111111111111111111111111111111111111 to beneficiary 0x2222222222222222222222222222222222222222 on Base Sepolia (chainId 84532), under verifying contract 0x7B92aB3D8BA17cF5f28C60E5c1FC326862dD6395, client order 8842, and EIP-712 digest 0xf2b039d29f26844a8089da79d3be77fa2939235e94506cf075152c88505a6370. The asset is project-deployed, valueless mUSD—not USDC or fiat-backed. “SG to CN” is only a synthetic scenario label and proves neither geography nor real cross-border settlement. The invoice is represented by a domain-separated, salted commitment; the raw invoice and salt are not publicly included. The protocol fee is zero, so successful release transfers the full stated amount. After funding, release must recheck current risk and approval epochs; a synthetic sanctions update must block release, after which escrow can be cancelled and refunded before release.",
+    "requiredAuthorizations": [
+      "The payer must verify the network, chainId, verifying contract, payer, beneficiary, asset identity, amount, client order, EIP-712 digest, invoice commitment, zero protocol fee, release behavior, and refund path before signing.",
+      "The payer must provide a valid signature only after confirming current payer and beneficiary risk attestations, live exact clearance, a live quote, the current nonce, and that the order and invoice commitment remain unused.",
+      "Before funding, two distinct wallets holding the required approver roles must each review the same payment details and submit separate live on-chain approval transactions.",
+      "Distinct role-wallet addresses are all the chain proves; this does not establish different humans or independent controllers."
+    ],
+    "preflightRechecks": [
+      "Immediately before signing and funding, recheck current payer and beneficiary risk attestations.",
+      "Confirm live exact clearance and a live quote for this exact plan.",
+      "Confirm the current payer nonce and ensure the signature binds to chainId 84532, the stated verifying contract, and the stated digest.",
+      "Confirm client order 8842 and the invoice commitment are unused.",
+      "Confirm both required approvals are live, current, associated with distinct approver-role wallet addresses, and completed before funding.",
+      "Confirm the payer and beneficiary addresses, amount, valueless mUSD asset, zero protocol fee, and cancellation/refund path match the reviewed plan.",
+      "Before release, recheck current risk status and approval epochs."
+    ],
+    "stopConditions": [
+      "Stop if any address, amount, asset, network, chainId, verifying contract, client order, digest, commitment, fee, nonce, quote, or clearance differs from the reviewed plan.",
+      "Stop if either party lacks a current required risk attestation, exact clearance is not live, or the quote is absent or stale.",
+      "Stop if the nonce is not current, or the order or invoice commitment has already been used.",
+      "Stop if the payer signature is missing, invalid, or does not bind to the reviewed typed data.",
+      "Stop before funding unless two live approval transactions from distinct required approver-role wallet addresses are confirmed.",
+      "Stop if any required approval or risk epoch is stale or changed.",
+      "Block release if a synthetic sanctions update or any other current risk failure appears after funding; cancel and refund the escrow before release.",
+      "Stop if anyone represents mUSD as USDC or fiat-backed, treats ‘SG to CN’ as proof of geography or settlement, or claims real KYC, sanctions screening, users, savings, or production readiness."
+    ],
+    "authorityStatement": "This explanation is not authorization, approval, a signature, a transaction, or permission to fund or release. The payer and required role-wallet operators must independently review and perform their own authorized actions.",
+    "evidenceBoundary": "This summary restates a public synthetic fixture and is not evidence that any on-chain fact, role, attestation, clearance, quote, nonce, unused status, signature, approval, balance, funding, release condition, or refund path is currently live or valid. Those facts require fresh verification. The chain can prove separate role-wallet addresses, but not different humans or independent controllers."
+  }
+}

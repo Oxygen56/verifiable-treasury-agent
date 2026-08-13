@@ -1,0 +1,27 @@
+{
+  "run_id": "20260812-213150_v2-final-coverage",
+  "name": "v2-final-coverage",
+  "command": [
+    "env",
+    "MOCHA_TIMEOUT=180000",
+    "pnpm",
+    "coverage"
+  ],
+  "returncode": 0,
+  "duration_sec": 265.787,
+  "metric": "line_coverage_pct",
+  "score": null,
+  "direction": "maximize",
+  "tags": "v2,coverage,security",
+  "notes": "Final coverage after all security and orchestration fixes",
+  "created_at": "2026-08-12T21:36:16",
+  "git": {
+    "commit": "7fc3553d4989e9626ebac03b36b20faa2a85e763",
+    "branch": "main",
+    "workingTreeSnapshot": "omitted from public evidence"
+  },
+  "publicArtifactSanitization": [
+    "Unrelated working-tree inventory omitted from the public evidence record.",
+    "User-home paths replaced with <USER_HOME>; dotenv loader banners removed; decorative separator lines normalized."
+  ]
+}

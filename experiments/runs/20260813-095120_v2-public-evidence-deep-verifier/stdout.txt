@@ -1,0 +1,463 @@
+{
+  "verifiedAt": "2026-08-13T01:51:46.205Z",
+  "network": "Base Sepolia",
+  "chainId": 84532,
+  "treasury": "0x7B92aB3D8BA17cF5f28C60E5c1FC326862dD6395",
+  "token": "0x2254a6A25f3284faaF79522bc1162743e0c39157",
+  "transcript": {
+    "transactionCount": 26,
+    "successfulReceipts": 25,
+    "expectedFailedReceipts": 1,
+    "strictChronologicalOrder": true,
+    "callersTargetsAndCalldataVerified": true,
+    "eventNamesValuesAndOrderVerified": true,
+    "transactions": [
+      {
+        "index": 0,
+        "label": "deploy mUSD",
+        "hash": "0x4b85f00682fa8a5aac651befd07b9e01408cd1330d0c2055d90b0a1572c20c77",
+        "blockNumber": 45386938,
+        "transactionIndex": 29,
+        "status": 1,
+        "from": "0x7c2164e3D612726Ed1C0451b2e04B62F85dB9f56",
+        "to": null,
+        "method": "CREATE mUSD",
+        "settlementId": null,
+        "events": []
+      },
+      {
+        "index": 1,
+        "label": "deploy V2",
+        "hash": "0x538ac7ec618ee8646bc1932a2243741da8caaeaa28ce7cd1824766c7ae56657d",
+        "blockNumber": 45386941,
+        "transactionIndex": 3,
+        "status": 1,
+        "from": "0x7c2164e3D612726Ed1C0451b2e04B62F85dB9f56",
+        "to": null,
+        "method": "CREATE VerifiableTreasuryV2",
+        "settlementId": null,
+        "events": [
+          "RoleGranted"
+        ]
+      },
+      {
+        "index": 2,
+        "label": "grant approver A",
+        "hash": "0x636538cdd4ed6ccbe86621d052b1dd359a7a1d28910fdfcfcbc4924a31157ef2",
+        "blockNumber": 45387044,
+        "transactionIndex": 11,
+        "status": 1,
+        "from": "0x7c2164e3D612726Ed1C0451b2e04B62F85dB9f56",
+        "to": "0x7B92aB3D8BA17cF5f28C60E5c1FC326862dD6395",
+        "method": "grantRole",
+        "settlementId": null,
+        "events": [
+          "RoleGranted"
+        ]
+      },
+      {
+        "index": 3,
+        "label": "grant approver B",
+        "hash": "0x8bea52aaafa840c9508be9de647cf010538ecfb7eaed5fadf2c864132991ed50",
+        "blockNumber": 45387045,
+        "transactionIndex": 14,
+        "status": 1,
+        "from": "0x7c2164e3D612726Ed1C0451b2e04B62F85dB9f56",
+        "to": "0x7B92aB3D8BA17cF5f28C60E5c1FC326862dD6395",
+        "method": "grantRole",
+        "settlementId": null,
+        "events": [
+          "RoleGranted"
+        ]
+      },
+      {
+        "index": 4,
+        "label": "grant compliance A",
+        "hash": "0x1964e475563e821a3b47f1c2e741750d6bcb0a991f4c75ec808117a2d928eaba",
+        "blockNumber": 45387048,
+        "transactionIndex": 1,
+        "status": 1,
+        "from": "0x7c2164e3D612726Ed1C0451b2e04B62F85dB9f56",
+        "to": "0x7B92aB3D8BA17cF5f28C60E5c1FC326862dD6395",
+        "method": "grantRole",
+        "settlementId": null,
+        "events": [
+          "RoleGranted"
+        ]
+      },
+      {
+        "index": 5,
+        "label": "grant compliance B",
+        "hash": "0xaa47e6bd8502382f9b30c7daa0d67794311cb192de956118eb8858e1396cfc5e",
+        "blockNumber": 45387049,
+        "transactionIndex": 20,
+        "status": 1,
+        "from": "0x7c2164e3D612726Ed1C0451b2e04B62F85dB9f56",
+        "to": "0x7B92aB3D8BA17cF5f28C60E5c1FC326862dD6395",
+        "method": "grantRole",
+        "settlementId": null,
+        "events": [
+          "RoleGranted"
+        ]
+      },
+      {
+        "index": 6,
+        "label": "mint payer",
+        "hash": "0x1372f270859b4f4d17c0b79bc5355844fa3b456a99d38f7496a7aa476f0ddaf9",
+        "blockNumber": 45387051,
+        "transactionIndex": 7,
+        "status": 1,
+        "from": "0x7c2164e3D612726Ed1C0451b2e04B62F85dB9f56",
+        "to": "0x2254a6A25f3284faaF79522bc1162743e0c39157",
+        "method": "mint",
+        "settlementId": null,
+        "events": [
+          "Transfer"
+        ]
+      },
+      {
+        "index": 7,
+        "label": "payer approve",
+        "hash": "0xf3e2acd07516c90b94d3d5fead4dcdf5d3748b01bb46a1a5d1080a6a0f4d22ce",
+        "blockNumber": 45387053,
+        "transactionIndex": 3,
+        "status": 1,
+        "from": "0x59a065a3294b046994BCD366cEbdEEa2463DE13a",
+        "to": "0x2254a6A25f3284faaF79522bc1162743e0c39157",
+        "method": "approve",
+        "settlementId": null,
+        "events": [
+          "Approval"
+        ]
+      },
+      {
+        "index": 8,
+        "label": "risk payer",
+        "hash": "0x8c0db72e54139c04812463f233e580b0961e8e33c18806d8d5863f06ab39bdc9",
+        "blockNumber": 45387055,
+        "transactionIndex": 18,
+        "status": 1,
+        "from": "0xaD6eaEebaFE68D0F8ab092B60Fc4329B74C8f407",
+        "to": "0x7B92aB3D8BA17cF5f28C60E5c1FC326862dD6395",
+        "method": "attestInitialRisk",
+        "settlementId": null,
+        "events": [
+          "SubjectRiskRecorded"
+        ]
+      },
+      {
+        "index": 9,
+        "label": "risk clean beneficiary",
+        "hash": "0x1811f66a256d4421f4c2f79eda1b54c5766f75942b66a0ba829398f15e6b53c5",
+        "blockNumber": 45387057,
+        "transactionIndex": 9,
+        "status": 1,
+        "from": "0xaD6eaEebaFE68D0F8ab092B60Fc4329B74C8f407",
+        "to": "0x7B92aB3D8BA17cF5f28C60E5c1FC326862dD6395",
+        "method": "attestInitialRisk",
+        "settlementId": null,
+        "events": [
+          "SubjectRiskRecorded"
+        ]
+      },
+      {
+        "index": 10,
+        "label": "risk blocked beneficiary",
+        "hash": "0x40223e0c9e7d02252258e2abd5c68f1a3e3970f17e7c9aba80ecfb046311301b",
+        "blockNumber": 45387058,
+        "transactionIndex": 25,
+        "status": 1,
+        "from": "0xaD6eaEebaFE68D0F8ab092B60Fc4329B74C8f407",
+        "to": "0x7B92aB3D8BA17cF5f28C60E5c1FC326862dD6395",
+        "method": "attestInitialRisk",
+        "settlementId": null,
+        "events": [
+          "SubjectRiskRecorded"
+        ]
+      },
+      {
+        "index": 11,
+        "label": "clearance clean",
+        "hash": "0xc7a7fbc282fdad9871fcfaddea46af0297f94adf820bcdf19aa8869086e536b3",
+        "blockNumber": 45387060,
+        "transactionIndex": 16,
+        "status": 1,
+        "from": "0xaD6eaEebaFE68D0F8ab092B60Fc4329B74C8f407",
+        "to": "0x7B92aB3D8BA17cF5f28C60E5c1FC326862dD6395",
+        "method": "issueClearance",
+        "settlementId": null,
+        "events": [
+          "ClearanceIssued"
+        ]
+      },
+      {
+        "index": 12,
+        "label": "clearance blocked unused",
+        "hash": "0x8e5a4aa209cf0cffc553d1a4b6816386eb0da5c9b7fb236a999990d6d8138bed",
+        "blockNumber": 45387061,
+        "transactionIndex": 34,
+        "status": 1,
+        "from": "0xaD6eaEebaFE68D0F8ab092B60Fc4329B74C8f407",
+        "to": "0x7B92aB3D8BA17cF5f28C60E5c1FC326862dD6395",
+        "method": "issueClearance",
+        "settlementId": null,
+        "events": [
+          "ClearanceIssued"
+        ]
+      },
+      {
+        "index": 13,
+        "label": "intent clean",
+        "hash": "0xb2634bc1911c2ae159dbd490bbe7203f796b96d7888dfe7a1fbcf1a09e279c7c",
+        "blockNumber": 45387064,
+        "transactionIndex": 4,
+        "status": 1,
+        "from": "0x3715b4B8db0b6EcF3A3CA425213C8D2E4B197f8F",
+        "to": "0x7B92aB3D8BA17cF5f28C60E5c1FC326862dD6395",
+        "method": "proposeWithSignature",
+        "settlementId": 1,
+        "events": [
+          "SettlementProposed"
+        ]
+      },
+      {
+        "index": 14,
+        "label": "approval clean A",
+        "hash": "0x7513e17b3a791fd775ea04166a0df1e9c273c32d79be7cb52cc86650a04471a0",
+        "blockNumber": 45387067,
+        "transactionIndex": 2,
+        "status": 1,
+        "from": "0xaBE5919C7c05F41643d133638173bEEB6DCCD21b",
+        "to": "0x7B92aB3D8BA17cF5f28C60E5c1FC326862dD6395",
+        "method": "approveSettlement",
+        "settlementId": 1,
+        "events": [
+          "SettlementApproved"
+        ]
+      },
+      {
+        "index": 15,
+        "label": "approval clean B",
+        "hash": "0x59845cd0e7516b9a46c94829467bca9dd0a86698b41ef5f80e7b750b088f87d7",
+        "blockNumber": 45387068,
+        "transactionIndex": 29,
+        "status": 1,
+        "from": "0x4530922FE0c3f41976CCa048C00E9aD8FD9860E6",
+        "to": "0x7B92aB3D8BA17cF5f28C60E5c1FC326862dD6395",
+        "method": "approveSettlement",
+        "settlementId": 1,
+        "events": [
+          "SettlementApproved"
+        ]
+      },
+      {
+        "index": 16,
+        "label": "fund clean",
+        "hash": "0x3daa6fd5ecf0fd5491b907ece3dbf7650fa72c6fbc18d0f897c4bd3c898e26da",
+        "blockNumber": 45387070,
+        "transactionIndex": 9,
+        "status": 1,
+        "from": "0x59a065a3294b046994BCD366cEbdEEa2463DE13a",
+        "to": "0x7B92aB3D8BA17cF5f28C60E5c1FC326862dD6395",
+        "method": "fundSettlement",
+        "settlementId": 1,
+        "events": [
+          "Transfer",
+          "ClearanceConsumptionChanged",
+          "SettlementFunded"
+        ]
+      },
+      {
+        "index": 17,
+        "label": "2 issue payer-bound blocked-path clearance",
+        "hash": "0xd0362bae22e9fce7ef842ee436afd658d474e36b62436a4b4903ea881a691109",
+        "blockNumber": 45387271,
+        "transactionIndex": 2,
+        "status": 1,
+        "from": "0xaD6eaEebaFE68D0F8ab092B60Fc4329B74C8f407",
+        "to": "0x7B92aB3D8BA17cF5f28C60E5c1FC326862dD6395",
+        "method": "issueClearance",
+        "settlementId": null,
+        "events": [
+          "ClearanceIssued"
+        ]
+      },
+      {
+        "index": 18,
+        "label": "2 relayer submits payer-signed intent",
+        "hash": "0xfce92eb7fb7134a45fa3366296b770bf881794f76fe8d0119e4b8db00e209e2d",
+        "blockNumber": 45387275,
+        "transactionIndex": 8,
+        "status": 1,
+        "from": "0x3715b4B8db0b6EcF3A3CA425213C8D2E4B197f8F",
+        "to": "0x7B92aB3D8BA17cF5f28C60E5c1FC326862dD6395",
+        "method": "proposeWithSignature",
+        "settlementId": 2,
+        "events": [
+          "SettlementProposed"
+        ]
+      },
+      {
+        "index": 19,
+        "label": "2 distinct approval wallet 1 of 2",
+        "hash": "0xceaa19e5fa5b510825cfda211aab336a90b41720ff64372295393fdbc0c99565",
+        "blockNumber": 45387278,
+        "transactionIndex": 17,
+        "status": 1,
+        "from": "0xaBE5919C7c05F41643d133638173bEEB6DCCD21b",
+        "to": "0x7B92aB3D8BA17cF5f28C60E5c1FC326862dD6395",
+        "method": "approveSettlement",
+        "settlementId": 2,
+        "events": [
+          "SettlementApproved"
+        ]
+      },
+      {
+        "index": 20,
+        "label": "2 distinct approval wallet 2 of 2",
+        "hash": "0x60a9da82019d2e08166df471520871137f97d6b95536bf1e0d797a977520aa4a",
+        "blockNumber": 45387281,
+        "transactionIndex": 9,
+        "status": 1,
+        "from": "0x4530922FE0c3f41976CCa048C00E9aD8FD9860E6",
+        "to": "0x7B92aB3D8BA17cF5f28C60E5c1FC326862dD6395",
+        "method": "approveSettlement",
+        "settlementId": 2,
+        "events": [
+          "SettlementApproved"
+        ]
+      },
+      {
+        "index": 21,
+        "label": "2 payer funds revocable escrow",
+        "hash": "0xb9510b3a8d9e11438a259e607ed435e377dd75e7f49c8eb8154f86cd945f3695",
+        "blockNumber": 45387286,
+        "transactionIndex": 6,
+        "status": 1,
+        "from": "0x59a065a3294b046994BCD366cEbdEEa2463DE13a",
+        "to": "0x7B92aB3D8BA17cF5f28C60E5c1FC326862dD6395",
+        "method": "fundSettlement",
+        "settlementId": 2,
+        "events": [
+          "Transfer",
+          "ClearanceConsumptionChanged",
+          "SettlementFunded"
+        ]
+      },
+      {
+        "index": 22,
+        "label": "2 synthetic sanctions update freezes beneficiary",
+        "hash": "0x8f02b805473b985bde2736cadc6b620664f6656eabfa156b4057268e2be2b6f8",
+        "blockNumber": 45387288,
+        "transactionIndex": 18,
+        "status": 1,
+        "from": "0xaD6eaEebaFE68D0F8ab092B60Fc4329B74C8f407",
+        "to": "0x7B92aB3D8BA17cF5f28C60E5c1FC326862dD6395",
+        "method": "flagSubjectSanctioned",
+        "settlementId": null,
+        "events": [
+          "SubjectRiskRecorded"
+        ]
+      },
+      {
+        "index": 23,
+        "label": "2 release blocked on-chain after sanctions update",
+        "hash": "0xf4be9274fc867ae0efea504966649f37bbce6dfcbb797c92ec0ce3f22031f8db",
+        "blockNumber": 45387299,
+        "transactionIndex": 18,
+        "status": 0,
+        "from": "0x3715b4B8db0b6EcF3A3CA425213C8D2E4B197f8F",
+        "to": "0x7B92aB3D8BA17cF5f28C60E5c1FC326862dD6395",
+        "method": "releaseSettlement",
+        "settlementId": 2,
+        "events": []
+      },
+      {
+        "index": 24,
+        "label": "2 payer cancels and receives full refund",
+        "hash": "0x251b3f969c6dedc06dbbe84866717511c26220f80f53e17e3065945753236b07",
+        "blockNumber": 45387302,
+        "transactionIndex": 22,
+        "status": 1,
+        "from": "0x59a065a3294b046994BCD366cEbdEEa2463DE13a",
+        "to": "0x7B92aB3D8BA17cF5f28C60E5c1FC326862dD6395",
+        "method": "cancelSettlement",
+        "settlementId": 2,
+        "events": [
+          "Transfer",
+          "ClearanceConsumptionChanged",
+          "SettlementCancelled"
+        ]
+      },
+      {
+        "index": 25,
+        "label": "1 clean settlement releases to distinct beneficiary",
+        "hash": "0xb1d2be7aee2381be2c7e7040b44eb669b36c656cc7bc14e83b7e161a16fa3d43",
+        "blockNumber": 45387306,
+        "transactionIndex": 16,
+        "status": 1,
+        "from": "0x3715b4B8db0b6EcF3A3CA425213C8D2E4B197f8F",
+        "to": "0x7B92aB3D8BA17cF5f28C60E5c1FC326862dD6395",
+        "method": "releaseSettlement",
+        "settlementId": 1,
+        "events": [
+          "Transfer",
+          "SettlementReleased"
+        ]
+      }
+    ]
+  },
+  "historicalFailedRelease": {
+    "hash": "0xf4be9274fc867ae0efea504966649f37bbce6dfcbb797c92ec0ce3f22031f8db",
+    "method": "releaseSettlement",
+    "settlementId": 2,
+    "status": 0,
+    "callBlock": 45387298,
+    "selector": "0xa16cb56b",
+    "decodedError": "BeneficiarySanctioned",
+    "traceFailed": true,
+    "traceGasUsed": "98359",
+    "traceSteps": 1236,
+    "traceTerminalOpcode": "REVERT",
+    "traceDecodedError": "BeneficiarySanctioned"
+  },
+  "criticalSequence": [
+    "settlement 2 funded",
+    "blocked beneficiary risk changed to sanctioned=true / epoch=2",
+    "settlement 2 release reverted with BeneficiarySanctioned",
+    "settlement 2 cancelled and 15000 mUSD refunded",
+    "settlement 1 released 15000 mUSD to the clean beneficiary"
+  ],
+  "reconciliation": {
+    "tokenSymbol": "mUSD",
+    "tokenDecimals": 6,
+    "tokenTotalSupply": "30000000000",
+    "payer": "15000000000",
+    "beneficiaryClean": "15000000000",
+    "beneficiaryBlocked": "0",
+    "escrow": "0",
+    "remainingAllowance": "0",
+    "totalEscrowed": "0",
+    "cleanState": 4,
+    "blockedState": 5,
+    "blockedRiskSanctioned": true,
+    "blockedRiskEpoch": 2,
+    "cleanClearanceConsumed": "15000000000",
+    "blockedClearanceConsumedAfterRefund": "0",
+    "unusedClearanceConsumed": "0",
+    "payerNonce": "2",
+    "nextSettlementId": "3",
+    "solvent": true,
+    "invoiceDisclosureVerified": true
+  },
+  "costAndTiming": {
+    "totalGasUsed": "9303697",
+    "totalFeeWei": "55950883453125",
+    "publicBlockSpanSeconds": 736,
+    "observedConfirmationLatencySampleCount": 9,
+    "medianObservedConfirmationLatencyMs": 7499,
+    "latencyBoundary": "Retained client observations only; not a production performance claim."
+  },
+  "verificationBoundary": "Public RPC receipt/state/event verification plus historical eth_call and debug trace. This is reproducible evidence, not an independent smart-contract audit or production settlement.",
+  "passed": true
+}

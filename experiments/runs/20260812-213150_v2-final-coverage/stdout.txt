@@ -1,0 +1,85 @@
+Version
+----------------------------------------
+> solidity-coverage: v0.8.17
+
+Instrumenting for coverage...
+----------------------------------------
+
+> FeeOnTransferToken.sol
+> MockStablecoin.sol
+> VerifiableTreasury.sol
+> VerifiableTreasuryV2.sol
+
+Compilation:
+----------------------------------------
+
+Compiled 34 Solidity files successfully (evm target: cancun).
+
+Network Info
+----------------------------------------
+> HardhatEVM: v2.29.0
+> network:    hardhat
+
+
+
+  VerifiableTreasury
+    ✔ executes a low-value settlement and verifies selective disclosure (1139ms)
+    ✔ requires two distinct approvals above the high-value threshold (997ms)
+    ✔ blocks sanctioned beneficiaries without mutating settlement state (1042ms)
+    ✔ cancels a funded settlement and refunds the payer before release (1695ms)
+    ✔ rolls an expired funded settlement back and reconciles balances (635ms)
+    ✔ reverts atomically when the daily limit would be exceeded (707ms)
+    ✔ invalidates release when compliance changes the attested policy digest (601ms)
+
+  VerifiableTreasuryV2 stateful invariants
+    ✔ preserves solvency, exact conservation, single terminal outcome, and nonce monotonicity across 64 generated paths (107844ms)
+
+  VerifiableTreasuryV2
+    ✔ relays a payer-signed, corridor- and quote-bound intent without giving AI authority (354ms)
+    ✔ rejects AI or relayer attempts to tamper with the signed beneficiary, amount, route or quote (295ms)
+    ✔ prevents replay, duplicate client orders and duplicate invoice payments (169ms)
+    ✔ lets a payer invalidate leaked signed intents with a strictly monotonic nonce (76ms)
+    ✔ enforces independent high-value approval and rejects payer/operator/compliance conflicts (219ms)
+    ✔ starts the challenge window at funding, not proposal, and releases to a distinct beneficiary (2397ms)
+    ✔ blocks release after a sanctions change and preserves revocable escrow (2524ms)
+    ✔ reverts daily-limit failures atomically (1380ms)
+    ✔ rejects fee-on-transfer assets so the ledger never promises more than escrow received (887ms)
+    ✔ rolls expired escrow back permissionlessly and reconciles exactly (400ms)
+    ✔ invalidates credentials issued by a compliance identity after that identity is revoked (359ms)
+    ✔ blocks a sanctioned payer at release and preserves a full refund path (2680ms)
+    ✔ does not revive an old approval after revoke and re-grant, then supports a fresh round (2018ms)
+    ✔ requires two distinct compliance identities to clear a sanctions flag (212ms)
+    ✔ rejects a stale first compliance vote after revoke/re-grant and rejects beneficiary self-clear (201ms)
+    ✔ invalidates a pending clear vote when new screening evidence is re-attested (119ms)
+    ✔ fails closed when a clean risk attestation becomes stale and recovers after re-attestation (249ms)
+    ✔ supports precise clearance revocation and invalidates old payer-risk credentials after a sanctions cycle (410ms)
+    ✔ enforces route, amount and quote expiry from the signed clearance and quote (436ms)
+    ✔ scopes invoice replay protection by payer so copied mempool commitments cannot block the victim (616ms)
+    ✔ binds disclosure to the chain, contract, parties, amount, route, and client order (1038ms)
+    ✔ reconciles three concurrently funded settlements across release, payer cancel, and expiry rollback (6712ms)
+    ✔ enforces cumulative lifetime allowance on a reusable payer-bound clearance (4338ms)
+
+  SettlementIntent orchestrator V2
+    ✔ matches the contract's domain-separated commitment and EIP-712 digest exactly (656ms)
+    ✔ is deterministic across object-key ordering and excludes private preimages from output (979ms)
+    ✔ does not expose an invoice-only digest that links the same invoice across salts (651ms)
+    ✔ rejects same-party, invalid amount, route, quote, validity, order, and authorization material (858ms)
+    ✔ CLI emits the same unsigned plan without requiring a network connection (3775ms)
+    ✔ contains no signer, wallet, provider, contract call, or transaction transport primitive
+
+
+  37 passing (2m)
+
+---------------------------|----------|----------|----------|----------|----------------|
+File                       |  % Stmts | % Branch |  % Funcs |  % Lines |Uncovered Lines |
+---------------------------|----------|----------|----------|----------|----------------|
+ contracts/                |    97.49 |    45.98 |    89.47 |    99.34 |                |
+  FeeOnTransferToken.sol   |    85.71 |      100 |       75 |      100 |                |
+  MockStablecoin.sol       |       50 |      100 |    66.67 |      100 |                |
+  VerifiableTreasury.sol   |    96.55 |    46.81 |    85.71 |      100 |                |
+  VerifiableTreasuryV2.sol |    98.84 |    45.45 |    94.44 |    99.14 |        548,642 |
+---------------------------|----------|----------|----------|----------|----------------|
+All files                  |    97.49 |    45.98 |    89.47 |    99.34 |                |
+---------------------------|----------|----------|----------|----------|----------------|
+
+> Istanbul reports written to ./coverage/ and ./coverage.json
