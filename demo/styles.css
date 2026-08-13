@@ -823,6 +823,14 @@ footer {
   background: var(--white);
 }
 
+.video-button {
+  display: inline-flex;
+  align-items: center;
+  min-height: 54px;
+  text-align: center;
+  text-decoration: none;
+}
+
 .trust-boundary {
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
