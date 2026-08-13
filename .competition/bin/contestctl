@@ -1,2 +1,18 @@
 #!/usr/bin/env bash
-exec python3 "/Users/oxygen/.codex/skills/competition-war-room/scripts/contestctl.py" "$@"
+set -euo pipefail
+
+if [[ -n "${CONTEST_WAR_ROOM_SKILL_ROOT:-}" ]]; then
+  skill_root="$CONTEST_WAR_ROOM_SKILL_ROOT"
+elif [[ -n "${CODEX_HOME:-}" ]]; then
+  skill_root="$CODEX_HOME/skills/competition-war-room"
+else
+  skill_root="$HOME/.codex/skills/competition-war-room"
+fi
+
+controller="$skill_root/scripts/contestctl.py"
+test -f "$controller" || {
+  echo "competition-war-room is unavailable; set CONTEST_WAR_ROOM_SKILL_ROOT" >&2
+  exit 1
+}
+
+exec python3 "$controller" "$@"
