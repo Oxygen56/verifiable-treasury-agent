@@ -428,6 +428,118 @@ footer {
   color: #1d100d;
 }
 
+.live-proof {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(420px, 1.15fr);
+  gap: clamp(42px, 7vw, 110px);
+  align-items: center;
+  padding: 84px clamp(28px, 7vw, 110px);
+  border-bottom: 1px solid var(--line);
+  background: var(--white);
+}
+
+.live-proof-copy h2 {
+  max-width: 720px;
+  margin: 20px 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(40px, 4.6vw, 70px);
+  font-weight: 400;
+  letter-spacing: -0.055em;
+  line-height: 0.98;
+}
+
+.live-proof-copy > p:not(.eyebrow) {
+  max-width: 680px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.live-proof-copy small {
+  display: block;
+  max-width: 650px;
+  margin-top: 20px;
+  color: var(--muted);
+  font-size: 9px;
+  line-height: 1.6;
+}
+
+.live-proof-button {
+  margin-top: 12px;
+}
+
+.live-proof-panel {
+  min-width: 0;
+  padding: 28px;
+  border: 1px solid var(--ink);
+  background: var(--ink);
+  color: white;
+  box-shadow: 8px 8px 0 var(--lime-deep);
+}
+
+.live-proof-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+}
+
+.live-proof-panel > strong {
+  display: block;
+  margin-top: 38px;
+  color: var(--lime);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(30px, 3vw, 48px);
+  font-weight: 400;
+  letter-spacing: -0.04em;
+}
+
+.live-proof-panel > p {
+  color: #b4c3bd;
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.live-proof-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 28px;
+  border-top: 1px solid var(--dark-line);
+  border-left: 1px solid var(--dark-line);
+}
+
+.live-proof-grid div {
+  min-width: 0;
+  padding: 18px;
+  border-right: 1px solid var(--dark-line);
+  border-bottom: 1px solid var(--dark-line);
+}
+
+.live-proof-grid span,
+.live-proof-grid b {
+  display: block;
+}
+
+.live-proof-grid span {
+  color: #91a69d;
+  font-size: 8px;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+}
+
+.live-proof-grid b {
+  margin-top: 8px;
+  font-size: 12px;
+}
+
+.live-proof-foot {
+  margin: 18px 0 0;
+  font-size: 9px !important;
+}
+
 .moment span {
   font-size: 10px;
   font-weight: 900;
@@ -1236,6 +1348,10 @@ footer {
   .answer-grid {
     grid-template-columns: 1fr 1fr;
   }
+
+  .live-proof {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 800px) {
@@ -1264,7 +1380,8 @@ footer {
   .scope-strip,
   .control-grid,
   .evidence-cards,
-  .metrics {
+  .metrics,
+  .live-proof-grid {
     grid-template-columns: 1fr;
   }
 

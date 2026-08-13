@@ -42,6 +42,7 @@ const PUBLIC_FILES = [
   "test/VerifiableTreasuryV2.invariants.test.js",
   "test/VerifiableTreasuryV2.test.js",
   "test/orchestrator-v2.test.js",
+  "test/live-verifier.test.js",
   "scripts/check-contract-size.js",
   "scripts/full-demo-v2-base-sepolia.js",
   "scripts/package-v2-release.js",

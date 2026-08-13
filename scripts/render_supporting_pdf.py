@@ -255,7 +255,7 @@ page_base(c, "Verification and claim ledger", 4)
 draw_text(c, 0.7 * inch, H - 1.12 * inch, "Deep evidence. Narrow claims.", 34, "Helvetica-Bold", INK)
 
 metrics = [
-    ("37", "repository checks", "30 current V2 + 7 historical V1 controls"),
+    ("40", "repository checks", "33 current V2 + 7 historical V1 controls"),
     ("64", "deterministic paths", "generated state-path matrix, not formal fuzzing"),
     ("99.14%", "V2 line coverage", "45.45% branch coverage"),
     ("0", "triaged high/medium", "Slither project-code findings; not an audit"),

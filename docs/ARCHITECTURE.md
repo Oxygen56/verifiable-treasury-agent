@@ -95,11 +95,11 @@ The public Base Sepolia run demonstrates two terminal paths with 26 receipts: on
 
 ## Evidence quality
 
-- 37 repository-wide checks pass: 30 current V2 contract/state-path/planner checks plus 7 retained historical V1 controls. The V2-only judge bundle reproduces the 30 current checks.
+- 40 repository-wide checks pass: 33 current V2 contract/state-path/planner/live-verifier checks plus 7 retained historical V1 controls. The V2-only judge bundle reproduces the 33 current checks.
 - The V2 contract has 98.84% statement, 94.44% function, 99.14% line, and 45.45% branch coverage.
 - A filtered Slither high/medium triage analyzed 26 contracts with 63 detectors and reported zero findings. This is not an independent audit.
 - The deployed runtime is 22,427 bytes, below EIP-170 by 2,149 bytes.
-- The local and Base Sepolia runtimes have the same normalized hash after compiler-declared immutable slots are zeroed. Third-party explorer source verification is not complete.
+- The local and Base Sepolia runtimes have the same normalized hash after compiler-declared immutable slots are zeroed. Blockscout also publishes the standard-JSON source and reports verified/partial matching with unchanged bytecode, but not full verification.
 
 The 64 generated paths are deterministic stateful regression checks, not a formal verification result or an exhaustive fuzzing proof.
 
